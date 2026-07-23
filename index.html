@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Mobilnova - die Betriebssoftware fuer Fahrzeugaufbereiter: Fahrzeugannahme per Tablet, Angebote, Auftraege, E-Rechnung, Kalender und Kundengewinnung in einem System. Jetzt fruehen Zugang sichern.">
+<meta name="theme-color" content="#0e6f95">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mobilnova - Software fuer Fahrzeugaufbereiter">
+<meta property="og:description" content="Mobilnova - die Betriebssoftware fuer Fahrzeugaufbereiter: Fahrzeugannahme per Tablet, Angebote, Auftraege, E-Rechnung, Kalender und Kundengewinnung in einem System. Jetzt fruehen Zugang sichern.">
+<meta name="twitter:card" content="summary_large_image">
+<title>Mobilnova — Software für Fahrzeugaufbereiter</title>
+<style>
+  :root{
+    color-scheme: light;
+    --bg:#e9f1f8; --panel:#ffffff; --panel-2:#f2f8fc; --sink:#e2edf5;
+    --ink:#0c1a24; --muted:#4c6273; --faint:#7d95a6;
+    --line:#d7e4ee; --line-2:#e8f0f7;
+    --accent:#0e6f95; --accent-2:#1fb3d8; --accent-3:#0a4f6c;
+    --accent-bg:#e0f0f7; --accent-line:#bfe1ec;
+    --good:#1c9a68; --good-bg:#dcf1e8; --amber:#e0902f; --danger:#dd5a52;
+    --grad:linear-gradient(135deg,#1aa6c9 0%,#0e6f95 100%);
+    --grad-soft:linear-gradient(135deg,#e8f6fb,#dbeef6);
+    --sheen:#a9ecff;
+    --serif:"Iowan Old Style",Charter,Georgia,"Times New Roman",serif;
+    --sans:"Helvetica Neue",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono","Cascadia Mono",Menlo,Consolas,monospace;
+    --r:12px; --r-lg:18px; --r-xl:24px;
+    --shadow-sm:0 1px 2px rgba(13,40,60,.06);
+    --shadow:0 1px 2px rgba(13,40,60,.05),0 12px 30px rgba(13,40,60,.09);
+    --shadow-lg:0 34px 64px -24px rgba(9,58,84,.4),0 12px 26px rgba(9,58,84,.12);
+    --ring:0 0 0 4px rgba(31,179,216,.24);
+  }
+  /* Bewusst helles Design als fester Standard (auf Wunsch) — auch bei Geräten im Dunkelmodus.
+     Dunkle Variante nur, wenn der Betrachter im Artefakt explizit auf Dunkel stellt. */
+  :root[data-theme="light"]{ color-scheme:light;
+    --bg:#e9f1f8;--panel:#ffffff;--panel-2:#f2f8fc;--sink:#e2edf5;--ink:#0c1a24;--muted:#4c6273;--faint:#7d95a6;
+    --line:#d7e4ee;--line-2:#e8f0f7;--accent:#0e6f95;--accent-2:#1fb3d8;--accent-3:#0a4f6c;--accent-bg:#e0f0f7;--accent-line:#bfe1ec;
+    --good:#1c9a68;--good-bg:#dcf1e8;--amber:#e0902f;--danger:#dd5a52;--grad-soft:linear-gradient(135deg,#e8f6fb,#dbeef6);
+    --shadow-lg:0 34px 64px -24px rgba(9,58,84,.4),0 12px 26px rgba(9,58,84,.12);--ring:0 0 0 4px rgba(31,179,216,.24);}
+  *{box-sizing:border-box}
+  body{margin:0}
+  .page{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+  .wrap{max-width:74rem;margin:0 auto;padding:0 clamp(1.1rem,4vw,2.2rem)}
+  a{color:var(--accent)}
+  h1,h2,h3{text-wrap:balance}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;color:var(--accent);font-weight:600;margin:0 0 .7rem}
+  .kick{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)}
+  h2{font-family:var(--sans);font-weight:800;letter-spacing:-.025em;font-size:clamp(1.7rem,3.6vw,2.55rem);line-height:1.08;margin:.5rem 0 .6rem}
+  .say{font-size:1.1rem;color:var(--muted);max-width:60ch;margin:0}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
+    background:
+      radial-gradient(52% 46% at 88% 4%, rgba(31,179,216,.20), transparent 60%),
+      radial-gradient(46% 52% at 4% 96%, rgba(14,111,149,.14), transparent 62%),
+      linear-gradient(180deg,#f6fbfe 0%, var(--bg) 100%)}
+  .hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,var(--accent-2),transparent);opacity:.45}
+  .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:clamp(1.6rem,4vw,3rem);align-items:center;
+    padding:clamp(1.4rem,3vw,2.4rem) 0 clamp(2.4rem,5vw,3.6rem)}
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:1.3rem 0 .4rem;gap:1rem}
+  .brand{display:flex;align-items:center;gap:.6rem;font-weight:750;letter-spacing:-.01em;font-size:1.1rem}
+  .brand .mark{width:1.75rem;height:1.75rem;border-radius:8px;display:grid;place-items:center;color:#fff;font-weight:800;
+    background:var(--grad);box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 6px 16px rgba(14,111,149,.32)}
+  .brand small{font-family:var(--mono);font-weight:500;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;margin-top:1px}
+  .topcta{font-size:.82rem;font-weight:600;color:var(--accent);text-decoration:none;border:1px solid var(--accent-line);
+    background:var(--panel);border-radius:999px;padding:.42rem .95rem;box-shadow:var(--shadow-sm);white-space:nowrap}
+  .topcta:hover{background:var(--accent-bg)}
+
+  .tagpill{display:inline-flex;align-items:center;gap:.5rem;margin:.4rem 0 1.1rem;padding:.34rem .8rem;
+    border:1px solid var(--accent-line);border-radius:999px;background:var(--panel);box-shadow:var(--shadow-sm);
+    font-family:var(--mono);font-size:.68rem;letter-spacing:.05em;color:var(--muted)}
+  .tagpill .dot{width:.5rem;height:.5rem;border-radius:50%;background:var(--accent-2);box-shadow:0 0 0 3px rgba(31,179,216,.2)}
+  h1.lead{font-weight:800;letter-spacing:-.035em;line-height:1.02;font-size:clamp(2.3rem,5.6vw,4rem);margin:0 0 1.05rem;max-width:15ch;color:var(--ink)}
+  h1.lead .shine{background:linear-gradient(100deg,#0e6f95 0%,#1aa6c9 40%,var(--sheen) 50%,#1aa6c9 60%,#0e6f95 100%);
+    background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sweep 6.5s ease-in-out infinite}
+  @keyframes sweep{0%,100%{background-position:128% 0}50%{background-position:-28% 0}}
+  .sub{font-size:clamp(1.04rem,2vw,1.24rem);color:var(--muted);max-width:46ch;margin:0 0 1.8rem;line-height:1.55}
+  .sub b{color:var(--ink);font-weight:600}
+
+  /* signup */
+  .signup{max-width:33rem}
+  .signup .row{display:flex;gap:.55rem;flex-wrap:wrap}
+  .in{flex:1 1 15rem;min-width:0;font:inherit;font-size:1rem;color:var(--ink);background:var(--panel);
+    border:1px solid var(--line);border-radius:11px;padding:.85rem 1rem;box-shadow:var(--shadow-sm);
+    transition:border-color .15s,box-shadow .15s}
+  .in::placeholder{color:var(--faint)}
+  .in:focus{outline:none;border-color:var(--accent-2);box-shadow:var(--ring)}
+  .in-full{width:100%;margin-top:.55rem}
+  .btn{flex:0 0 auto;font:inherit;font-weight:700;font-size:1rem;letter-spacing:-.01em;cursor:pointer;color:#fff;border:0;
+    border-radius:11px;padding:.85rem 1.5rem;white-space:nowrap;background:var(--grad);
+    box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 8px 20px rgba(14,111,149,.3);transition:transform .12s,box-shadow .15s,filter .15s}
+  .btn:hover{transform:translateY(-1px);filter:brightness(1.05);box-shadow:0 1px 0 rgba(255,255,255,.45) inset,0 12px 26px rgba(14,111,149,.4)}
+  .btn:active{transform:translateY(0)}
+  .btn:focus-visible{outline:3px solid var(--accent-2);outline-offset:2px}
+  .consent{display:flex;gap:.55rem;align-items:flex-start;margin-top:.9rem;font-size:.82rem;color:var(--muted);line-height:1.45;cursor:pointer}
+  .consent input{margin-top:.18rem;flex:none;width:1.05rem;height:1.05rem;accent-color:var(--accent)}
+  .consent a{color:var(--accent)}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .formnote{min-height:1.1rem;margin:.7rem 0 0;font-size:.85rem;font-weight:600}
+  .formnote.ok{color:var(--good)}.formnote.err{color:var(--danger)}
+  .signup.sent .row,.signup.sent .in-full,.signup.sent .consent{display:none}
+  .signup.sent .formnote{font-size:1.05rem;color:var(--good)}
+  .trust{display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;margin:1.5rem 0 0;font-size:.82rem;color:var(--muted)}
+  .trust span{display:inline-flex;align-items:center;gap:.45rem}
+  .trust .c{color:var(--good);font-weight:800}
+
+  /* ---------- APP MOCKUP ---------- */
+  .shot{position:relative;perspective:1400px}
+  .shot .glow{position:absolute;inset:6% 4% -6% 4%;background:radial-gradient(60% 60% at 60% 30%,rgba(31,179,216,.28),transparent 70%);filter:blur(28px);z-index:0}
+  .device{position:relative;z-index:1;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-xl);
+    box-shadow:var(--shadow-lg);overflow:hidden}
+  .device .bar{display:flex;align-items:center;gap:.5rem;padding:.65rem .9rem;border-bottom:1px solid var(--line-2);background:var(--panel-2)}
+  .device .bar .dots{display:flex;gap:.35rem}
+  .device .bar .dots i{width:.6rem;height:.6rem;border-radius:50%;background:var(--line)}
+  .device .bar .ttl{font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-left:.35rem}
+  .device .bar .save{margin-left:auto;display:inline-flex;align-items:center;gap:.35rem;font-size:.6rem;font-weight:700;
+    color:var(--good);background:var(--good-bg);border-radius:999px;padding:.2rem .55rem}
+  .device .bar .save::before{content:"";width:.4rem;height:.4rem;border-radius:50%;background:var(--good)}
+  .app{display:grid;grid-template-columns:3.1rem 1fr}
+  .rail{display:flex;flex-direction:column;gap:.35rem;padding:.7rem .4rem;background:var(--panel-2);border-right:1px solid var(--line-2)}
+  .rail .ico{width:2.3rem;height:2.1rem;border-radius:9px;display:grid;place-items:center;color:var(--faint)}
+  .rail .ico svg{width:1.15rem;height:1.15rem}
+  .rail .ico.act{background:var(--accent-bg);color:var(--accent)}
+  .main{padding:1rem 1.1rem 1.15rem}
+  .mhead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;margin-bottom:.7rem}
+  .mhead b{font-size:.98rem;letter-spacing:-.01em}
+  .mhead span.pl{font-family:var(--mono);font-size:.62rem;color:var(--muted)}
+  .mhead .step{font-family:var(--mono);font-size:.62rem;color:var(--accent);background:var(--accent-bg);border-radius:999px;padding:.24rem .6rem;white-space:nowrap}
+  .canvas{position:relative;background:var(--grad-soft);border:1px solid var(--line-2);border-radius:14px;padding:.6rem;display:grid;place-items:center}
+  .canvas svg.car{width:100%;max-width:14rem;height:auto;display:block}
+  .tag{position:absolute;font-family:var(--mono);font-size:.6rem;font-weight:700;color:#fff;background:var(--ink);
+    border-radius:7px;padding:.22rem .5rem;box-shadow:var(--shadow);white-space:nowrap}
+  .tag::after{content:"";position:absolute;width:.5rem;height:.5rem;background:inherit;transform:rotate(45deg)}
+  .tag-a{top:34%;left:2%;} .tag-a::after{right:-3px;top:42%}
+  .chips{display:flex;gap:.45rem;margin-top:.7rem;flex-wrap:wrap}
+  .chip{display:inline-flex;align-items:center;gap:.4rem;font-size:.72rem;color:var(--muted);background:var(--panel-2);
+    border:1px solid var(--line-2);border-radius:9px;padding:.4rem .6rem}
+  .chip b{color:var(--ink)} .chip.ok{color:var(--good);border-color:var(--good-bg)} .chip.ok b{color:var(--good)}
+  .chip .g{width:2.4rem;height:.34rem;border-radius:99px;background:var(--line);overflow:hidden;flex:none}
+  .chip .g i{display:block;height:100%;width:62%;background:var(--accent-2)}
+  .floatcard{position:absolute;z-index:2;right:-.4rem;bottom:-1rem;background:var(--panel);border:1px solid var(--line);
+    border-radius:12px;box-shadow:var(--shadow-lg);padding:.55rem .75rem;display:flex;align-items:center;gap:.55rem;font-size:.74rem}
+  .floatcard .ok{width:1.5rem;height:1.5rem;border-radius:8px;display:grid;place-items:center;background:var(--good-bg);color:var(--good)}
+  .floatcard b{display:block;font-size:.82rem;letter-spacing:-.01em}
+  .floatcard span{color:var(--muted);font-size:.68rem}
+  .mk .ring{fill:none;stroke-width:2;transform-origin:center;transform-box:fill-box;animation:pulse 2.4s ease-out infinite}
+  .mk.a .ring{stroke:var(--amber)} .mk.a .dot{fill:var(--amber)}
+  .mk.b .ring{stroke:var(--danger)} .mk.b .dot{fill:var(--danger)}
+  .mk.b .ring{animation-delay:1.2s}
+  @keyframes pulse{0%{transform:scale(.5);opacity:.9}70%,100%{transform:scale(1.5);opacity:0}}
+
+  /* ---------- SECTIONS ---------- */
+  section.blk{padding:clamp(3rem,7vw,5.5rem) 0;border-bottom:1px solid var(--line-2)}
+  .pain{background:var(--panel-2)}
+  .pain .strike{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.4rem 0 0}
+  .pain .strike span{font-family:var(--mono);font-size:.8rem;color:var(--faint);border:1px dashed var(--line);border-radius:8px;
+    padding:.4rem .7rem;text-decoration:line-through;text-decoration-color:var(--accent-2)}
+  .pain .after{margin:1.5rem 0 0;font-size:1.15rem;font-weight:600;color:var(--ink);max-width:56ch}
+  .pain .after b{color:var(--accent)}
+
+  .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr));gap:1rem;margin-top:2.2rem}
+  .pillar{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-lg);padding:1.5rem 1.4rem;box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
+  .pillar::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad)}
+  .pillar .ic{width:2.7rem;height:2.7rem;border-radius:12px;display:grid;place-items:center;margin-bottom:1rem;background:var(--accent-bg);color:var(--accent)}
+  .pillar .ic svg{width:1.45rem;height:1.45rem}
+  .pillar h3{font-size:1.18rem;font-weight:700;letter-spacing:-.015em;margin:0 0 .5rem}
+  .pillar p{margin:0;color:var(--muted);font-size:.98rem;line-height:1.55}
+  .pillar .mini{list-style:none;margin:.9rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem}
+  .pillar .mini li{font-size:.74rem;font-family:var(--mono);color:var(--accent);background:var(--accent-bg);border-radius:7px;padding:.24rem .55rem}
+
+  .allin{background:var(--panel-2)}
+  .fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,15rem),1fr));gap:.6rem;margin-top:2rem}
+  .feat{display:flex;align-items:flex-start;gap:.7rem;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:.85rem .95rem;box-shadow:var(--shadow-sm)}
+  .feat .ck{flex:none;width:1.35rem;height:1.35rem;margin-top:.05rem;border-radius:50%;display:grid;place-items:center;background:var(--good-bg);color:var(--good)}
+  .feat .ck svg{width:.82rem;height:.82rem}
+  .feat .ft{display:block;font-weight:650;font-size:.92rem;line-height:1.25}
+  .feat .fd{display:block;font-size:.78rem;color:var(--muted);margin-top:.2rem;line-height:1.4}
+
+  .band-hi{background:radial-gradient(80% 120% at 92% 8%, rgba(31,179,216,.12), transparent 55%), var(--panel)}
+  .hi-in{display:grid;grid-template-columns:1.25fr 1fr;gap:2rem;align-items:center}
+  .hi-in .big{font-weight:800;letter-spacing:-.02em;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.1;margin:.4rem 0 .7rem}
+  .hi-in .big b{color:var(--accent)}
+  .hi-in p{color:var(--muted);margin:0;max-width:46ch}
+  .hi-card{background:var(--panel-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:1.3rem 1.4rem;box-shadow:var(--shadow-sm)}
+  .hi-card .row2{display:flex;align-items:center;gap:.7rem;padding:.55rem 0;border-bottom:1px solid var(--line-2);font-size:.92rem}
+  .hi-card .row2:last-child{border-bottom:0}
+  .hi-card .row2 .c{color:var(--good);flex:none;font-weight:800}
+
+  .aud{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr));gap:.7rem;margin-top:2rem}
+  .aud div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1rem 1.1rem;box-shadow:var(--shadow-sm);font-weight:650}
+  .aud div span{display:block;font-weight:400;font-size:.85rem;color:var(--muted);margin-top:.25rem}
+
+  .founder{background:var(--panel-2)}
+  .founder .q{font-family:var(--serif);font-size:clamp(1.35rem,3vw,1.95rem);line-height:1.35;font-weight:500;letter-spacing:-.01em;max-width:34ch;margin:0}
+  .founder .q b{color:var(--accent);font-weight:600}
+  .founder .by{margin:1.3rem 0 0;font-size:.9rem;color:var(--muted);display:flex;align-items:center;gap:.7rem}
+  .founder .by .av{width:2.5rem;height:2.5rem;border-radius:50%;flex:none;display:grid;place-items:center;color:#fff;font-weight:800;background:var(--grad)}
+
+  .final{border:0;background:var(--grad);color:#fff;text-align:center;position:relative;overflow:hidden}
+  .final::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 100% at 50% -20%,rgba(255,255,255,.22),transparent 60%)}
+  .final .inr{position:relative}
+  .final h2{color:#fff}
+  .final .eyebrow{color:#d3f4ff}
+  .final .say{color:#dbf3fb;margin:0 auto 1.8rem}
+  .cta-btn{display:inline-flex;align-items:center;gap:.6rem;font-weight:750;font-size:1.05rem;text-decoration:none;color:var(--accent-3);
+    background:#fff;border-radius:12px;padding:.95rem 1.8rem;box-shadow:0 10px 26px rgba(6,40,58,.28);transition:transform .12s,filter .15s}
+  .cta-btn:hover{transform:translateY(-1px);filter:brightness(1.02)}
+  .cta-btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+  .faq{display:grid;gap:.6rem;margin-top:2rem;max-width:52rem}
+  details{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow-sm)}
+  summary{cursor:pointer;list-style:none;padding:1rem 1.2rem;font-weight:650;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:1.2rem;flex:none}
+  details[open] summary::after{content:"–"}
+  details p{margin:0;padding:0 1.2rem 1.1rem;color:var(--muted);font-size:.95rem;line-height:1.55}
+
+  footer.ft{background:var(--sink);padding:2.6rem 0;border-top:1px solid var(--line)}
+  .ft-in{display:flex;flex-wrap:wrap;gap:1.4rem 2rem;justify-content:space-between;align-items:flex-start}
+  .ft-in .col{font-size:.85rem;color:var(--muted);line-height:1.7}
+  .ft-in .col b{display:block;font-size:.95rem;margin-bottom:.4rem;color:var(--ink)}
+  .ft-in a{color:var(--muted);text-decoration:none}.ft-in a:hover{color:var(--accent)}
+  .ft-brand{display:flex;align-items:center;gap:.55rem;margin-bottom:.5rem;font-weight:750}
+  .ft-brand .mark{width:1.5rem;height:1.5rem;border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:.9rem;background:var(--grad)}
+  .legal{margin-top:1.7rem;padding-top:1.2rem;border-top:1px solid var(--line-2);font-size:.76rem;color:var(--faint);
+    font-family:var(--mono);display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;justify-content:space-between}
+
+  @media (max-width:900px){ .hero-grid{grid-template-columns:1fr} .shot{max-width:32rem;margin:.5rem auto 0} .hi-in{grid-template-columns:1fr} }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand"><span class="mark">M</span><span>Mobilnova<small>für Aufbereiter</small></span></div>
+        <a class="topcta" href="#signup">Auf die Warteliste →</a>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="tagpill"><span class="dot"></span> In Entwicklung · frühe Plätze verfügbar</div>
+          <h1 class="lead">Dein Betrieb, <span class="shine">glänzend</span> organisiert.</h1>
+          <p class="sub">Die Software, die den Aufbereitungs-Alltag kann — von der <b>Fahrzeugannahme am Tablet</b>
+            über Angebot, Auftrag und Rechnung bis zur <b>Kundengewinnung</b>. Alles an einem Ort, statt Zettel,
+            Excel und Foto-Chaos.</p>
+
+          <form id="signup" class="signup" name="interesse" method="POST" action="https://formspree.io/f/mlgqwzjv">
+            <input type="hidden" name="_subject" value="Neue Mobilnova-Anmeldung (Warteliste)">
+            <div class="hp" aria-hidden="true"><label>Nicht ausfüllen <input name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+            <div class="row">
+              <input class="in" type="email" name="email" required autocomplete="email" placeholder="deine@email.de" aria-label="E-Mail-Adresse">
+              <button class="btn" type="submit">Frühen Zugang sichern</button>
+            </div>
+            <input class="in in-full" type="text" name="betrieb" autocomplete="organization" placeholder="Betrieb &amp; Ort (optional)" aria-label="Betrieb und Ort">
+            <label class="consent">
+              <input type="checkbox" name="einwilligung" required>
+              <span>Informiert mich per E-Mail zum Start von Mobilnova. Jederzeit abbestellbar — es gilt die <a href="datenschutz.html">Datenschutzerklärung</a>.</span>
+            </label>
+            <p class="formnote" id="formnote" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="trust">
+            <span><span class="c">✓</span> Kostenlos &amp; unverbindlich</span>
+            <span><span class="c">✓</span> Kein Spam — nur die Startnachricht</span>
+          </div>
+        </div>
+
+        <!-- APP MOCKUP -->
+        <div class="shot" aria-label="Beispielansicht der Mobilnova-App: digitale Fahrzeugannahme" role="img">
+          <div class="glow"></div>
+          <div class="device">
+            <div class="bar">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="ttl">mobilnova.app · Fahrzeugannahme</span>
+              <span class="save">Gespeichert</span>
+            </div>
+            <div class="app">
+              <nav class="rail" aria-hidden="true">
+                <span class="ico act"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.2A2 2 0 0 1 8.5 7h7a2 2 0 0 1 1.9 1.8L19 13v5h-2v-2H7v2H5z"></path><circle cx="8" cy="16" r="1"></circle><circle cx="16" cy="16" r="1"></circle></svg></span>
+                <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"></circle><path d="M3 20a6 6 0 0 1 12 0M16 6a3 3 0 0 1 0 6M21 20a6 6 0 0 0-4-5.6"></path></svg></span>
+                <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M3 9h18M8 2v4M16 2v4"></path></svg></span>
+                <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"></path><path d="M6 3h8l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"></path></svg></span>
+                <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg></span>
+              </nav>
+              <div class="main">
+                <div class="mhead">
+                  <div><b>Mercedes GLC</b> <span class="pl">B·MN 2026</span></div>
+                  <span class="step">Schritt 3 / 6</span>
+                </div>
+                <div class="canvas">
+                  <span class="tag tag-a">Kratzer · Tür</span>
+                  <svg class="car" viewBox="0 0 210 270" role="presentation">
+                    <defs>
+                      <linearGradient id="paint" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="#2bb6d8"/><stop offset="1" stop-color="#0d6288"/>
+                      </linearGradient>
+                    </defs>
+                    <ellipse cx="105" cy="258" rx="70" ry="8" fill="rgba(10,50,70,.14)"/>
+                    <rect x="47" y="60" width="18" height="36" rx="7" fill="#26323c"/>
+                    <rect x="145" y="60" width="18" height="36" rx="7" fill="#26323c"/>
+                    <rect x="47" y="176" width="18" height="36" rx="7" fill="#26323c"/>
+                    <rect x="145" y="176" width="18" height="36" rx="7" fill="#26323c"/>
+                    <rect x="54" y="46" width="12" height="10" rx="3" fill="url(#paint)"/>
+                    <rect x="144" y="46" width="12" height="10" rx="3" fill="url(#paint)"/>
+                    <rect x="56" y="18" width="98" height="236" rx="46" fill="url(#paint)"/>
+                    <path d="M72 92 L138 92 L130 64 Q105 56 80 64 Z" fill="#d7eef8" opacity=".92"/>
+                    <rect x="74" y="98" width="62" height="74" rx="9" fill="#ffffff" opacity=".14"/>
+                    <path d="M74 178 L136 178 L130 206 Q105 212 80 206 Z" fill="#d7eef8" opacity=".9"/>
+                    <path d="M105 100 L105 170" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.5"/>
+                    <g class="mk a"><circle class="ring" cx="80" cy="150" r="9"/><circle class="dot" cx="80" cy="150" r="5.5"/></g>
+                    <g class="mk b"><circle class="ring" cx="120" cy="232" r="9"/><circle class="dot" cx="120" cy="232" r="5.5"/></g>
+                  </svg>
+                </div>
+                <div class="chips">
+                  <span class="chip"><span class="g"><i></i></span> <b>118&nbsp;µm</b> Lackdicke</span>
+                  <span class="chip">3 Fotos</span>
+                  <span class="chip ok"><b>✓</b> Unterschrift</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="floatcard">
+            <span class="ok"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg></span>
+            <span><b>Angebot #241 erstellt</b><span>480 € · in Auftrag übernommen</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PAIN ============ -->
+  <section class="blk pain">
+    <div class="wrap">
+      <p class="kick">Kommt dir bekannt vor?</p>
+      <h2>Der Betrieb läuft — die Verwaltung frisst den Feierabend.</h2>
+      <div class="strike">
+        <span>Auftragszettel</span><span>Excel-Kundenliste</span><span>WhatsApp-Fotos</span>
+        <span>Terminbuch</span><span>Rechnung in Word</span><span>Schäden erklären</span>
+        <span>Nachfassen vergessen</span><span>Wo ist die Historie?</span>
+      </div>
+      <p class="after">Mobilnova fasst das zusammen, was heute auf fünf Werkzeuge verteilt ist —
+        <b>ein System für den ganzen Betrieb</b>, gebaut für Fahrzeugaufbereitung, nicht für „irgendeine Branche".</p>
+    </div>
+  </section>
+
+  <!-- ============ PILLARS ============ -->
+  <section class="blk">
+    <div class="wrap">
+      <p class="kick">Was Mobilnova für dich tut</p>
+      <h2>Vom Hof bis zur Rechnung — in einem Fluss.</h2>
+      <p class="say">Fünf Bereiche, die zusammenspielen. Keine Doppel-Eingabe, keine verlorenen Fotos, kein Suchen.</p>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"></rect><path d="M8 21h8M12 18v3M7 9h6M7 13h4"></path></svg></div>
+          <h3>Annahme direkt am Fahrzeug</h3>
+          <p>Mit dem Tablet neben dem Auto: Zustand und Schäden aufs Fahrzeugschema tippen, Fotos machen,
+            Lackdicke messen, Kunde unterschreibt — alles digital dokumentiert, ganz ohne Papier.</p>
+          <ul class="mini"><li>Schadensschema</li><li>Fotos</li><li>Lackmessung</li><li>Unterschrift</li></ul>
+        </div>
+        <div class="pillar">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"></path><path d="M5 3h9l5 5v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"></path><path d="M8 13h8M8 17h5"></path></svg></div>
+          <h3>Angebot, Auftrag, Rechnung</h3>
+          <p>Aus dem Angebot wird per Klick der Auftrag, daraus die Rechnung im eigenen Layout —
+            inklusive gesetzeskonformer E-Rechnung. Kunde zahlt bequem per Kartenlink, Erinnerungen laufen automatisch.</p>
+          <ul class="mini"><li>Angebote</li><li>E-Rechnung</li><li>Kartenzahlung</li><li>Mahnwesen</li></ul>
+        </div>
+        <div class="pillar">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M3 9h18M8 2v4M16 2v4M8 13h3v3H8z"></path></svg></div>
+          <h3>Der ganze Betrieb, geplant</h3>
+          <p>Kalender mit Stellplätzen wie in Outlook, Mitarbeiter und Zeiterfassung, Material und Lager.
+            Nach der Versiegelung erinnert dich das System automatisch an die Nachpflege.</p>
+          <ul class="mini"><li>Kalender</li><li>Mitarbeiter</li><li>Material</li><li>Nachpflege</li></ul>
+        </div>
+        <div class="pillar">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-7-7 18-2.5-7.5z"></path><path d="M11.5 12.5 21 4"></path></svg></div>
+          <h3>Aus Kunden werden Stammkunden</h3>
+          <p>Jede Fahrzeughistorie an einem Ort. Newsletter und Aktionen rechtssicher mit Einwilligung,
+            Terminanfragen direkt von deiner Website — damit die Halle voll bleibt.</p>
+          <ul class="mini"><li>Kundendatei</li><li>Newsletter</li><li>Online-Termine</li></ul>
+        </div>
+        <div class="pillar">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"></rect><path d="M11 18h2"></path></svg></div>
+          <h3>Überall dabei, immer sicher</h3>
+          <p>Läuft im Browser und auf dem Tablet — kein Server im Büro nötig. In fünf Sprachen,
+            mit sicherer Datenhaltung und strenger Trennung zwischen Betrieben.</p>
+          <ul class="mini"><li>Cloud</li><li>Tablet-fähig</li><li>5 Sprachen</li><li>DSGVO</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ALL-IN FEATURE GRID ============ -->
+  <section class="blk allin">
+    <div class="wrap">
+      <p class="kick">Alles drin</p>
+      <h2>Ein Werkzeug statt zehn Abos.</h2>
+      <p class="say">Was heute schon im System steckt — jede Funktion auf den Aufbereiter-Alltag zugeschnitten.</p>
+      <div class="fgrid" id="fgrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ E-RECHNUNG BAND ============ -->
+  <section class="blk band-hi">
+    <div class="wrap hi-in">
+      <div>
+        <p class="kick">Rechtssicher ab Tag eins</p>
+        <div class="big">E-Rechnung ist Pflicht — <b>bei uns schon eingebaut.</b></div>
+        <p>Betriebe müssen elektronische Rechnungen empfangen und zunehmend selbst ausstellen können.
+          Mobilnova erstellt und liest sie im geforderten Format — ohne Zusatzsoftware, ohne Aufpreis.
+          Du musst dich um nichts kümmern.</p>
+      </div>
+      <div class="hi-card">
+        <div class="row2"><span class="c">✓</span> E-Rechnung erstellen (XRechnung &amp; ZUGFeRD)</div>
+        <div class="row2"><span class="c">✓</span> Eingehende E-Rechnungen automatisch einlesen</div>
+        <div class="row2"><span class="c">✓</span> Rechnung im Layout deines Betriebs, mit Logo</div>
+        <div class="row2"><span class="c">✓</span> Kleinunternehmer-Regelung (§19) berücksichtigt</div>
+        <div class="row2"><span class="c">✓</span> Zahlung per Kartenlink &amp; automatische Erinnerung</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AUDIENCE ============ -->
+  <section class="blk">
+    <div class="wrap">
+      <p class="kick">Für wen</p>
+      <h2>Gemacht für alle, die Fahrzeuge zum Glänzen bringen.</h2>
+      <div class="aud">
+        <div>Fahrzeugaufbereitung<span>Innen &amp; außen, im Kundenauftrag</span></div>
+        <div>Folierung &amp; Lackschutz<span>Eigene Sparte mit Serie, Finish &amp; Bauteil</span></div>
+        <div>Keramikversiegelung<span>Mit automatischer Nachpflege-Erinnerung</span></div>
+        <div>Mobile Aufbereiter<span>Annahme &amp; Fotos direkt vor Ort per Tablet</span></div>
+        <div>Ein-Mann-Betrieb<span>Schlank starten, ohne Ballast</span></div>
+        <div>Wachsende Teams<span>Mitarbeiter, Rollen &amp; Zeiten mitwachsend</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOUNDER ============ -->
+  <section class="blk founder">
+    <div class="wrap">
+      <p class="kick">Warum es das gibt</p>
+      <p class="q">„Ich habe die Software gesucht, die es für unser Handwerk nicht gab —
+        also <b>bauen wir sie im eigenen Betrieb</b>, aus echten Abläufen statt am Reißbrett."</p>
+      <div class="by">
+        <span class="av">M</span>
+        <span>Aus der Praxis der <b>Glanz Aufbereitung</b> — jeden Tag im eigenen Betrieb im Einsatz, bevor du sie bekommst.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="blk final">
+    <div class="wrap inr">
+      <p class="eyebrow">Sei von Anfang an dabei</p>
+      <h2>Sichere dir deinen frühen Platz.</h2>
+      <p class="say">Trag deine E-Mail ein und erfahre als Erster, wenn Mobilnova für neue Betriebe öffnet.
+        Die Warteliste entscheidet die Reihenfolge — und frühe Betriebe bekommen Sonderkonditionen.</p>
+      <a class="cta-btn" href="#signup">E-Mail eintragen &nbsp;→</a>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="blk">
+    <div class="wrap">
+      <p class="kick">Häufige Fragen</p>
+      <h2>Kurz erklärt.</h2>
+      <div class="faq">
+        <details open><summary>Was kostet Mobilnova?</summary><p>Die Preise legen wir gemeinsam mit den ersten Betrieben fest. Wer sich jetzt einträgt, ist bei der Preisgestaltung dabei und erhält Frühbucher-Konditionen.</p></details>
+        <details><summary>Wann kann ich loslegen?</summary><p>Der Kern läuft bereits im täglichen Betrieb. Wir öffnen Schritt für Schritt für weitere Betriebe — deshalb die Warteliste. Trag dich ein, und wir melden uns, sobald ein Platz frei wird.</p></details>
+        <details><summary>Brauche ich technisches Wissen oder eigene Hardware?</summary><p>Nein. Mobilnova läuft im Browser und auf einem gängigen Tablet — kein Server im Büro, keine Installation. Die Einrichtung machen wir gemeinsam mit dir.</p></details>
+        <details><summary>Was passiert mit meinen Daten?</summary><p>Deine Daten gehören dir. Sie werden sicher gespeichert, DSGVO-konform behandelt und streng von den Daten anderer Betriebe getrennt.</p></details>
+        <details><summary>Kann ich meine bestehenden Kunden und Leistungen übernehmen?</summary><p>Ja. Dein Leistungskatalog und deine Kundendaten lassen sich einrichten und übernehmen — das besprechen wir beim Start mit dir.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="ft">
+    <div class="wrap">
+      <div class="ft-in">
+        <div class="col" style="max-width:22rem">
+          <div class="ft-brand"><span class="mark">M</span> Mobilnova</div>
+          Die Betriebssoftware für Fahrzeugaufbereiter. Entwickelt in der Praxis der Glanz Aufbereitung.
+        </div>
+        <div class="col">
+          <b>Kontakt</b>
+          <a href="mailto:info@glanz-aufbereitung.de">info@glanz-aufbereitung.de</a><br>
+          <a href="#signup">Auf die Warteliste</a>
+        </div>
+        <div class="col">
+          <b>Rechtliches</b>
+          <a href="impressum.html">Impressum</a><br>
+          <a href="datenschutz.html">Datenschutzerklärung</a>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© 2026 Glanz Aufbereitung · Mobilnova</span>
+        <span>Info- und Warteliste-Seite · noch kein Vertragsangebot</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  /* ---- Feature-Liste ---- */
+  var FEATURES=[
+    ["Kunden- & Fahrzeugkartei","Stammdaten, Historie, Fahrzeugakte"],
+    ["Digitale Fahrzeugannahme","Geführt am Tablet, Schritt für Schritt"],
+    ["Schäden am Fahrzeugschema","Antippen statt beschreiben, 5 Ansichten"],
+    ["Fotodokumentation","Vorher/Nachher, sicher am Auftrag"],
+    ["Lackdicken-Messung","Schichtdicke je Bauteil erfassen"],
+    ["Angebote & Aufträge","Auch für mehrere Fahrzeuge"],
+    ["Rechnungen & E-Rechnung","Im eigenen Layout, gesetzeskonform"],
+    ["Kartenzahlung per Link","Kunde zahlt bequem online"],
+    ["Mahnwesen","Erinnerungen laufen automatisch"],
+    ["Kalender & Stellplätze","Tages-, Wochen- & Monatsansicht"],
+    ["Online-Terminanfragen","Von deiner Website direkt ins System"],
+    ["Mitarbeiter & Zeiten","Zeiterfassung und Stundenkonto"],
+    ["Material & Lager","Bestand und Materialkosten je Auftrag"],
+    ["Nachpflege-Erinnerung","Automatisch nach der Versiegelung"],
+    ["Berichte & Umsatz","Auslastung und Zahlen auf einen Blick"],
+    ["Newsletter & Aktionen","Mit Einwilligung, rechtssicher"],
+    ["5 Sprachen","Deutsch, Englisch, Niederländisch u. a."],
+    ["Cloud & Tablet","Ohne Server im Büro, überall dabei"]
+  ];
+  var ck='<span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg></span>';
+  var host=document.getElementById('fgrid');
+  if(host){ FEATURES.forEach(function(f){
+    var el=document.createElement('div'); el.className='feat';
+    el.innerHTML=ck+'<span><span class="ft">'+f[0]+'</span><span class="fd">'+f[1]+'</span></span>';
+    host.appendChild(el);
+  }); }
+
+  /* ---- E-Mail-Signup ----
+     GitHub Pages (und jedes statische Hosting) kann Formulare NICHT selbst verarbeiten.
+     Nutze daher einen kostenlosen Formular-Dienst wie Formspree:
+       1) Auf formspree.io kostenlos ein Formular anlegen -> du bekommst eine Adresse wie
+            https://formspree.io/f/xldbzabc
+       2) Diese Adresse unten bei FORM_ENDPOINT eintragen (EINZIGE Stelle, die du ändern musst).
+     Anmeldungen landen dann direkt in deinem E-Mail-Postfach. */
+  var FORM_ENDPOINT = "https://formspree.io/f/mlgqwzjv";   /* Formspree-Adresse — verbunden */
+
+  var form=document.getElementById('signup');
+  if(!form) return;
+  var note=document.getElementById('formnote');
+  if(FORM_ENDPOINT){ form.setAttribute('action',FORM_ENDPOINT); }
+  var demo=(window.self!==window.top)||location.protocol==='file:'; /* Vorschau/lokal: nur simulieren */
+  function show(msg,ok){ note.textContent=msg; note.className='formnote '+(ok?'ok':'err'); }
+  function reset(btn){ btn.disabled=false; btn.textContent='Frühen Zugang sichern'; }
+  function success(){ form.classList.add('sent'); show('Danke! Du stehst auf der Liste — wir melden uns zum Start. ✨',true); }
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var email=(form.email.value||'').trim();
+    if(!email) return;
+    if(!form.einwilligung.checked){ show('Bitte bestätige kurz die Einwilligung.',false); return; }
+    var btn=form.querySelector('button[type=submit]');
+    if(demo){ btn.disabled=true; btn.textContent='Wird gesendet …'; setTimeout(success,550); return; }
+    if(!FORM_ENDPOINT){ show('Formular noch nicht verbunden — bitte FORM_ENDPOINT im Code eintragen.',false); return; }
+    btn.disabled=true; btn.textContent='Wird gesendet …';
+    fetch(FORM_ENDPOINT,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)})
+      .then(function(r){ if(r.ok){ success(); } else { reset(btn); show('Senden hat nicht geklappt — bitte gleich noch einmal versuchen.',false); } })
+      .catch(function(){ reset(btn); show('Senden hat nicht geklappt — bitte gleich noch einmal versuchen.',false); });
+  });
+})();
+</script>
+</body>
+</html>

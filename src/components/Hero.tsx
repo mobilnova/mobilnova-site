@@ -1,7 +1,7 @@
-import SignupForm from "./SignupForm";
+import { AUTOPILOT } from "@/lib/links";
 
-// Der HERO ist bewusst unverändert aus der bisherigen Seite übernommen (gefällt dem Betrieb):
-// Zwei-Spalten-Layout mit App-Mockup der digitalen Fahrzeugannahme. Styles siehe globals.css.
+// Layout und App-Mockup des Heros bleiben bewusst wie bisher (Twans Wunsch); nur der Text folgt
+// dem Fahrplan vom 18.09.2026 ("Foto rein, Angebot raus"). Styles siehe globals.css.
 export default function Hero() {
   return (
     <section className="hero">
@@ -10,36 +10,49 @@ export default function Hero() {
           <div className="brand">
             <span className="mark">M</span>
             <span>
-              Mobilnova<small>für Aufbereiter</small>
+              mobilnova<small>Autopilot</small>
             </span>
           </div>
-          <a className="topcta" href="#signup">
-            Auf die Warteliste →
+          <a className="topcta" href={AUTOPILOT("kopf")}>
+            Preis &amp; Pilotplätze →
           </a>
         </div>
 
         <div className="hero-grid">
           <div className="hero-copy">
             <div className="tagpill">
-              <span className="dot"></span> In Entwicklung · frühe Plätze verfügbar
+              <span className="dot"></span> In Entwicklung · fünf Pilotplätze
             </div>
             <h1 className="lead">
-              Dein Betrieb, <span className="shine">glänzend</span> organisiert.
+              Foto rein, Angebot raus. <span className="shine">Der Rest läuft von selbst.</span>
             </h1>
             <p className="sub">
-              Die Software, die den Aufbereitungs-Alltag kann — von der{" "}
-              <b>Fahrzeugannahme am Tablet</b> über Angebot, Auftrag und Rechnung bis zur{" "}
-              <b>Kundengewinnung</b>. Alles an einem Ort, statt Zettel, Excel und Foto-Chaos.
+              Betriebsverwaltung mit Assistenten für <b>Folierer, PPF- und Aufbereitungsbetriebe</b>.
+              Dein Kunde schickt Fotos, deine Assistenten bereiten Angebot, Antwort, Termin und
+              Rechnung vor. <b>Du gibst nur frei.</b>
             </p>
 
-            <SignupForm />
+            <div className="mt-7 flex flex-wrap gap-3">
+              <a
+                href={AUTOPILOT("hero")}
+                className="inline-flex items-center gap-2 rounded-xl bg-grad px-6 py-3.5 text-base font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                Preis &amp; Warteliste ansehen →
+              </a>
+              <a
+                href="#assistenten"
+                className="inline-flex items-center gap-2 rounded-xl border border-line bg-panel px-6 py-3.5 text-base font-semibold text-ink transition hover:border-accent-line"
+              >
+                So funktioniert es
+              </a>
+            </div>
 
             <div className="trust">
               <span>
-                <span className="c">✓</span> Kostenlos &amp; unverbindlich
+                <span className="c">✓</span> Warteliste kostenlos &amp; unverbindlich
               </span>
               <span>
-                <span className="c">✓</span> Kein Spam — nur die Startnachricht
+                <span className="c">✓</span> Nichts geht raus, bevor du freigibst
               </span>
             </div>
           </div>
@@ -47,7 +60,7 @@ export default function Hero() {
           {/* APP-MOCKUP */}
           <div
             className="shot"
-            aria-label="Beispielansicht der Mobilnova-App: digitale Fahrzeugannahme"
+            aria-label="Beispielansicht der mobilnova-App: Fahrzeugannahme mit Fotos, daraus ein Angebot"
             role="img"
           >
             <div className="glow"></div>

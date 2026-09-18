@@ -18,8 +18,8 @@ export default function ERechnung() {
             </h2>
             <p className="mt-4 max-w-[52ch] text-lg leading-relaxed text-muted">
               Betriebe müssen elektronische Rechnungen empfangen und zunehmend selbst ausstellen
-              können. Mobilnova erstellt und liest sie im geforderten Format — ohne Zusatzsoftware,
-              ohne Aufpreis. Du musst dich um nichts kümmern.
+              können. mobilnova erstellt und liest sie im geforderten Format, ohne Zusatzsoftware.
+              Rechnungen rechnet immer das Regelwerk, nie die KI.
             </p>
           </div>
 

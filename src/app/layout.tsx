@@ -4,30 +4,29 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mobilnova.de"),
-  title: "Mobilnova — Software für Fahrzeugaufbereiter",
+  title: "mobilnova Autopilot — Foto rein, Angebot raus",
   description:
-    "Die Betriebssoftware für Fahrzeugaufbereiter: digitale Fahrzeugannahme am Tablet, " +
-    "Angebot, Auftrag, E-Rechnung und Kundengewinnung — alles an einem Ort. Jetzt auf die Warteliste.",
-  applicationName: "Mobilnova",
+    "Betriebsverwaltung mit Assistenten für Folierer, PPF- und Aufbereitungsbetriebe: " +
+    "Angebot aus Kundenfotos, Anfragen, Termin und Rechnung. Du gibst nur frei. In Entwicklung – Warteliste offen.",
+  applicationName: "mobilnova",
   keywords: [
+    "Folierung Software",
+    "Car Wrapping Software",
+    "PPF Software",
     "Fahrzeugaufbereitung Software",
-    "Aufbereiter Software",
-    "Detailing Software",
-    "Fahrzeugannahme App",
+    "Angebot aus Fotos",
     "E-Rechnung",
-    "Folierung",
-    "Keramikversiegelung",
   ],
-  authors: [{ name: "Glanz Fahrzeugaufbereitung" }],
+  authors: [{ name: "mobilnova" }],
   openGraph: {
     type: "website",
     locale: "de_DE",
     url: "https://mobilnova.de",
-    siteName: "Mobilnova",
-    title: "Mobilnova — Software für Fahrzeugaufbereiter",
+    siteName: "mobilnova",
+    title: "mobilnova Autopilot — Foto rein, Angebot raus",
     description:
-      "Digitale Fahrzeugannahme, Angebot, Auftrag, E-Rechnung und Kundengewinnung — " +
-      "die Software für den Aufbereitungs-Alltag. Auf die Warteliste eintragen.",
+      "Für Folierer, PPF- und Aufbereitungsbetriebe. Deine Assistenten sollen Angebot, " +
+      "Antwort, Termin und Rechnung vorbereiten. In Entwicklung – fünf Pilotplätze.",
   },
   alternates: { canonical: "https://mobilnova.de" },
 };

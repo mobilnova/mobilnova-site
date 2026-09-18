@@ -1,3 +1,5 @@
+import { AUTOPILOT } from "@/lib/links";
+
 type Pillar = {
   no: string;
   title: string;
@@ -5,52 +7,59 @@ type Pillar = {
   points: string[];
 };
 
+// 01–04 beschreiben die Assistenten, die mit den Pilotbetrieben entstehen (Fahrplan Phase 2).
+// 05 ist das Fundament, das heute schon läuft. Nichts hier behaupten, was noch nicht gebaut ist,
+// ohne es als geplant zu kennzeichnen (Überschrift der Karte unten).
 const PILLARS: Pillar[] = [
   {
     no: "01",
-    title: "Annahme direkt am Fahrzeug",
+    title: "Angebot aus Fotos",
     body:
-      "Zustand, Lackdicke, Schäden und Fotos am Tablet erfassen — mit Unterschrift des Kunden. Klare Beweislage, kein Streit hinterher.",
-    points: ["Schaden-Marker aufs Fahrzeug", "Fotos & Lackmessung", "Digitale Unterschrift"],
+      "Dein Kunde schickt Fotos und sagt, was er will. Dein Angebots-Assistent erstellt daraus das Angebot mit Folienbedarf je Bauteil und Arbeitszeit.",
+    points: ["Material je Bauteil kalkuliert", "Preise aus deiner Preisliste", "Du änderst und gibst frei"],
   },
   {
     no: "02",
-    title: "Angebot, Auftrag, Rechnung",
+    title: "Anfragen beantwortet",
     body:
-      "Aus der Annahme wird per Klick ein Angebot, daraus ein Auftrag und am Ende die Rechnung — inklusive E-Rechnung nach Vorgabe.",
-    points: ["Ein Klick statt Copy-Paste", "E-Rechnung (ZUGFeRD/XRechnung)", "Sammelrechnung für B2B"],
+      "Die Anfrage kommt abends oder während du am Auto stehst. Dein Anfrage-Assistent beantwortet Standardfragen, fordert fehlende Fotos an und schlägt Termine vor.",
+    points: ["Auch auf WhatsApp", "Fehlende Angaben werden nachgefragt", "Du übernimmst jederzeit"],
   },
   {
     no: "03",
-    title: "Der ganze Betrieb, geplant",
+    title: "Termin und Rechnung",
     body:
-      "Termine, Status und Auslastung auf einen Blick. Vom Eingang bis zur Abholung weißt du jederzeit, wo jedes Fahrzeug steht.",
-    points: ["Termin- & Kapazitätsplanung", "Status-Board je Fahrzeug", "Nichts geht mehr unter"],
+      "Nach deiner Freigabe gehen Terminbestätigung und Erinnerung von selbst raus. Nach dem Auftrag liegt die Rechnung fertig da, auf Wunsch als E-Rechnung.",
+    points: ["Anzahlung und Schlussrechnung", "Erinnerung an Termin und Zahlung", "E-Rechnung (XRechnung/ZUGFeRD)"],
   },
   {
     no: "04",
-    title: "Aus Kunden werden Stammkunden",
+    title: "Du gibst nur frei",
     body:
-      "Historie je Fahrzeug und Kunde, automatische Erinnerungen und Nachfass-Anlässe — damit die nächste Aufbereitung wieder bei dir landet.",
-    points: ["Fahrzeug- & Kundenakte", "Erinnerungen & Anlässe", "Weniger Aufwand, mehr Wiederkehr"],
+      "Jeder Vorschlag landet zuerst bei dir. Automatik schaltest du je Ablauf selbst frei, sobald du eine Reihe von Vorschlägen in Folge unverändert freigegeben hast (Standard: drei).",
+    points: ["Freigeben, ändern oder ablehnen", "Automatik je Ablauf schaltbar", "Du siehst, was erledigt wurde"],
   },
   {
     no: "05",
-    title: "Überall dabei, immer sicher",
+    title: "Das Fundament steht",
     body:
-      "Läuft im Browser auf Tablet, Handy und PC. Deine Daten liegen DSGVO-konform in Deutschland — nichts geht verloren.",
-    points: ["Tablet, Handy & Desktop", "DSGVO-konform, Server in DE", "Automatische Sicherung"],
+      "Kunden, Fahrzeuge, Annahme mit Fotos, Aufträge und Rechnungen laufen schon heute im System. Die Assistenten bauen darauf auf.",
+    points: ["Annahme am Tablet mit Unterschrift", "Aufträge und Kalender", "Getrennte Daten je Betrieb"],
   },
 ];
 
 export default function Pillars() {
   return (
-    <section id="funktionen" className="border-b border-line-2">
+    <section id="assistenten" className="border-b border-line-2">
       <div className="wrap py-16 md:py-24">
-        <p className="kick">Ein System, fünf Baustellen weniger</p>
-        <h2 className="mt-2 max-w-[20ch] text-3xl font-extrabold leading-tight tracking-tight text-ink md:text-[2.55rem]">
-          Von der Annahme bis zum Stammkunden — durchgängig.
+        <p className="kick">So sollen deine Assistenten arbeiten</p>
+        <h2 className="mt-2 max-w-[22ch] text-3xl font-extrabold leading-tight tracking-tight text-ink md:text-[2.55rem]">
+          Sie bereiten vor. Du entscheidest.
         </h2>
+        <p className="mt-3 max-w-[60ch] text-lg text-muted">
+          Die Assistenten 01–04 bauen wir als Nächstes, zusammen mit fünf Pilotbetrieben. Die
+          Pilotplätze sind noch frei. Das Fundament (05) läuft schon.
+        </p>
 
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {PILLARS.map((p) => (
@@ -84,15 +93,16 @@ export default function Pillars() {
 
           <article className="grid place-items-center rounded-xl border border-dashed border-accent-line bg-accent-bg/50 p-6 text-center">
             <div>
-              <p className="text-lg font-bold text-accent-3">Alles greift ineinander.</p>
+              <p className="text-lg font-bold text-accent-3">Fünf Pilotplätze.</p>
               <p className="mt-2 text-[0.975rem] leading-relaxed text-muted">
-                Keine Insellösungen, keine doppelte Erfassung. Ein Datenstand für den ganzen Betrieb.
+                Pilotbetriebe nutzen die Assistenten als Erste und bestimmen mit, was zuerst gebaut
+                wird. Preis, Pilotplätze und Warteliste stehen auf einer Seite.
               </p>
               <a
-                href="#signup"
+                href={AUTOPILOT("assistenten")}
                 className="mt-5 inline-flex items-center gap-1.5 rounded-lg bg-grad px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:brightness-105"
               >
-                Warteliste sichern →
+                Preis &amp; Pilotplätze →
               </a>
             </div>
           </article>

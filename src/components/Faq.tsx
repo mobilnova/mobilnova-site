@@ -1,24 +1,28 @@
 const FAQ: { q: string; a: string; open?: boolean }[] = [
   {
-    q: "Was kostet Mobilnova?",
-    a: "Die Preise legen wir gemeinsam mit den ersten Betrieben fest. Wer sich jetzt einträgt, ist bei der Preisgestaltung dabei und erhält Frühbucher-Konditionen.",
+    q: "Was kostet mobilnova Autopilot?",
+    a: "Den geplanten Preis und die Konditionen für die fünf Pilotbetriebe findest du auf der Autopilot-Seite, zusammen mit der Warteliste.",
     open: true,
   },
   {
+    q: "Schreiben die Assistenten einfach los?",
+    a: "Nein. Jeder Vorschlag landet zuerst bei dir: freigeben, ändern oder ablehnen. Automatik schaltest du je Ablauf selbst frei, sobald du eine Reihe von Vorschlägen in Folge unverändert freigegeben hast (Standard: drei, die Zahl legst du fest). Preise, Beträge und Steuern rechnet immer deine Preisliste, nie die KI.",
+  },
+  {
     q: "Wann kann ich loslegen?",
-    a: "Der Kern läuft bereits im täglichen Betrieb. Wir öffnen Schritt für Schritt für weitere Betriebe — deshalb die Warteliste. Trag dich ein, und wir melden uns, sobald ein Platz frei wird.",
+    a: "Die Grundfunktionen (Kunden, Fahrzeugannahme, Aufträge, Rechnungen) sind gebaut. Die Assistenten entstehen im Pilot mit fünf Betrieben; die Pilotplätze sind noch frei. Wer auf der Warteliste steht, erfährt als Erstes vom Start.",
+  },
+  {
+    q: "Ist das nur für Folierer?",
+    a: "Nein. mobilnova ist für Folierer, PPF-Betriebe und Aufbereiter gebaut. Was sich unterscheidet, etwa Folienbedarf je Bauteil oder Pakete in der Aufbereitung, soll sich je Betrieb einstellen lassen; daran arbeiten wir mit den Pilotbetrieben.",
   },
   {
     q: "Brauche ich technisches Wissen oder eigene Hardware?",
-    a: "Nein. Mobilnova läuft im Browser und auf einem gängigen Tablet — kein Server im Büro, keine Installation. Die Einrichtung machen wir gemeinsam mit dir.",
+    a: "Nein. mobilnova läuft im Browser auf Handy, Tablet und PC — kein Server im Büro, keine Installation. Die Einrichtung machen wir gemeinsam mit dir.",
   },
   {
     q: "Was passiert mit meinen Daten?",
     a: "Deine Daten gehören dir. Sie werden sicher gespeichert, DSGVO-konform behandelt und streng von den Daten anderer Betriebe getrennt.",
-  },
-  {
-    q: "Kann ich meine bestehenden Kunden und Leistungen übernehmen?",
-    a: "Ja. Dein Leistungskatalog und deine Kundendaten lassen sich einrichten und übernehmen — das besprechen wir beim Start mit dir.",
   },
 ];
 

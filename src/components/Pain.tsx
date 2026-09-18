@@ -1,12 +1,12 @@
 const ALTE_WERKZEUGE = [
-  "Auftragszettel",
-  "Excel-Kundenliste",
-  "WhatsApp-Fotos",
+  "Angebot abends am Küchentisch",
+  "Folie pro Bauteil ausrechnen",
+  "WhatsApp während der Arbeit",
+  "Rückruf vergessen",
   "Terminbuch",
   "Rechnung in Word",
-  "Schäden erklären",
+  "Anzahlung hinterherlaufen",
   "Nachfassen vergessen",
-  "Wo ist die Historie?",
 ];
 
 export default function Pain() {
@@ -29,10 +29,10 @@ export default function Pain() {
           ))}
         </div>
 
-        <p className="mt-8 max-w-[56ch] text-lg font-semibold text-ink">
-          Mobilnova fasst das zusammen, was heute auf fünf Werkzeuge verteilt ist —{" "}
-          <b className="text-accent">ein System für den ganzen Betrieb</b>, gebaut für
-          Fahrzeugaufbereitung, nicht für „irgendeine Branche".
+        <p className="mt-8 max-w-[58ch] text-lg font-semibold text-ink">
+          mobilnova Autopilot soll dir diese Arbeit abnehmen. Deine Assistenten bereiten vor,{" "}
+          <b className="text-accent">du gibst nur frei</b>. Unser Ziel: unter vier Stunden Büro pro
+          Woche statt zehn bis fünfzehn.
         </p>
       </div>
     </section>

@@ -8,7 +8,7 @@ export default function NotFound() {
           <span className="grid h-8 w-8 place-items-center rounded-md bg-grad text-sm font-extrabold text-white">
             M
           </span>
-          Mobilnova
+          mobilnova
         </div>
         <p className="mt-8 font-mono text-6xl font-extrabold text-accent">404</p>
         <h1 className="mt-4 text-2xl font-bold text-ink">Seite nicht gefunden</h1>

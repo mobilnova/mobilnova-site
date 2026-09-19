@@ -15,7 +15,6 @@ const FEATURES: [string, string][] = [
   ["Nachpflege-Erinnerung", "Automatisch nach der Versiegelung"],
   ["Berichte & Umsatz", "Auslastung und Zahlen auf einen Blick"],
   ["Newsletter & Aktionen", "Mit Einwilligung, rechtssicher"],
-  ["5 Sprachen", "Deutsch, Englisch, Niederländisch u. a."],
   ["Cloud & Tablet", "Ohne Server im Büro, überall dabei"],
 ];
 
@@ -23,12 +22,13 @@ export default function FeatureGrid() {
   return (
     <section className="border-b border-line-2 bg-panel-2">
       <div className="wrap py-16 md:py-24">
-        <p className="kick">Alles drin</p>
+        <p className="kick">Das Fundament</p>
         <h2 className="mt-2 text-3xl font-extrabold leading-tight tracking-tight text-ink md:text-[2.55rem]">
-          Ein Werkzeug statt zehn Abos.
+          Was heute schon im System steckt.
         </h2>
         <p className="mt-3 max-w-[60ch] text-lg text-muted">
-          Was heute schon im System steckt — jede Funktion auf den Aufbereiter-Alltag zugeschnitten.
+          Darauf bauen die Assistenten auf. Jede Funktion ist für den Werkstattalltag von Folierern
+          und Aufbereitern gebaut.
         </p>
 
         <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

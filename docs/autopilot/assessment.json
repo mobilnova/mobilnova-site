@@ -1,0 +1,171 @@
+{
+  "doc": "mobilnova-autopilot-assessment",
+  "version": "1.0",
+  "spec_version": "1.2",
+  "assessed_at": "2026-09-24",
+  "assessed_repo": "mobilnova/mobilnova-site @ 4af05e1",
+  "scope_warning": {
+    "summary": "Dieses Repo ist NICHT das Bestandssystem. mobilnova-site ist die oeffentliche Landingpage (Next.js, statischer Export, GitHub Pages). Es enthaelt keine Datenbank, keinen Server, keine Auth, keine Mandanten und keine Fach-Logik. Die Bewertung konnte daher nur gegen die Landingpage laufen.",
+    "not_reachable_in_this_session": [
+      "Produkt-Repo (Kunden, Fahrzeuge, Annahme, Auftraege, Rechnungen, Kalender, Mahnwesen) - Existenz laut Landingpage behauptet, Repo-Name unbekannt. 'mobilnova/mobilnova' ist ueber diese Session nicht erreichbar (add_repo: no access).",
+      "mobilnova-validation (autopilot.mobilnova.de, Railway) - in src/lib/links.ts als eigenes Repo benannt, ueber diese Session nicht erreichbar (add_repo: no access)."
+    ],
+    "consequence": "Alle Aussagen zu Bestandsfunktionen sind Hypothesen aus Marketingtexten dieses Repos, keine Codebefunde. existing_capabilities ist deshalb durchgehend 'unknown_repo_not_reachable'. Bevor gebaut wird, muss dieser Bericht einmal gegen das Produkt-Repo wiederholt werden - dann wird er zum Diff.",
+    "still_useful": "Der Plan (docs/autopilot/plan.md) ist stackunabhaengig formuliert und bleibt gueltig; nur die Aufwaende je Item aendern sich, wenn Bestandslogik gefunden wird."
+  },
+  "stack": {
+    "language": "TypeScript 5.6 (strict), React 18.3",
+    "framework": "Next.js 14.2.15, App Router, output: \"export\" (rein statisch, keine Server-Komponenten mit Laufzeit, keine Route Handler, keine API-Routen). Tailwind CSS 3.4 + eigene globals.css.",
+    "db": "keine. Kein ORM, kein Client, kein Schema im Repo.",
+    "hosting": "GitHub Pages ueber GitHub Actions (.github/workflows/deploy.yml), eigene Domain mobilnova.de (public/CNAME). Der Autopilot-/Umfrage-Dienst laeuft laut src/lib/links.ts getrennt auf Railway unter autopilot.mobilnova.de (Repo mobilnova-validation).",
+    "job_system": "keines. Kein Worker, kein Cron ausser dem Deploy-Workflow.",
+    "auth": "keine. Die Seite ist oeffentlich und hat kein Formular (public/datenschutz.html: 'reine Informationsseite'). Einzige externe Einbindung: Umami-Analytics-Script in src/app/layout.tsx.",
+    "tenancy": "nicht vorhanden und in diesem Repo auch nicht sinnvoll. Mandantentrennung wird in src/components/Faq.tsx und src/components/Pillars.tsx als Produkteigenschaft behauptet ('getrennte Daten je Betrieb'), ist hier aber nirgends implementiert.",
+    "conventions_observed": [
+      "Code englisch, alle Nutzertexte deutsch - deckt sich mit conventions.code_language der Spezifikation.",
+      "Kommentare erklaeren Absicht und Herkunft (z. B. src/lib/links.ts als einzige Stelle fuer die Autopilot-Adresse). Dieser Stil ist in neuem Code fortzufuehren.",
+      "Das Wort 'Kunde' meint in den Texten dieses Repos den Betrieb (tenant) UND dessen Endkunden. Die Konvention tenant/end_customer existiert noch nirgends."
+    ]
+  },
+  "items": [
+    {"id": "DATA-1", "status": "fehlt", "evidence": [], "gap": "Keine Datenbank im Repo. Tabelle autopilot_tasks samt serverseitig validierter Statusmaschine (state_machine) und Indizes (tenant_id,status) / (lane,status,created_at) ist vollstaendig neu zu bauen - im Produkt-Repo, nicht hier.", "effort": "M"},
+    {"id": "DATA-2", "status": "fehlt", "evidence": [], "gap": "Kein Event-Log vorhanden. task_events append-only inkl. Tool-Calls und Eskalationen fehlt.", "effort": "S"},
+    {"id": "DATA-3", "status": "fehlt", "evidence": [], "gap": "autopilot_settings je Mandant fehlt. Die Landingpage verspricht bereits eine Regel ('Automatik je Ablauf schaltbar, Standard drei unveraenderte Freigaben', src/components/Faq.tsx:9, src/components/Pillars.tsx:40) - diese Auto-Schaltung ist in der Spezifikation NICHT enthalten und muss in AP-2 ergaenzt werden, sonst wird ein oeffentliches Versprechen gebrochen.", "effort": "M"},
+    {"id": "DATA-4", "status": "fehlt", "evidence": [], "gap": "schedules inkl. jitter_minute, timezone, next_run_at fehlt.", "effort": "S"},
+    {"id": "DATA-5", "status": "fehlt", "evidence": [], "gap": "automation_rules fehlt. Setzt voraus, dass das Produkt-System Domain-Events ueberhaupt publiziert - unbekannt.", "effort": "M"},
+    {"id": "DATA-6", "status": "fehlt", "evidence": [], "gap": "approvals fehlt.", "effort": "S"},
+    {"id": "DATA-7", "status": "fehlt", "evidence": [], "gap": "usage_ledger fehlt. Trennung echte Kosten (EUR/Tokens) vs. Credits ist zwingend fuer BIL-4 und die pricing_rule (5x Kosten).", "effort": "M"},
+    {"id": "IN-1", "status": "fehlt", "evidence": [], "gap": "Kein Endpoint moeglich: output:\"export\" in next.config.mjs schliesst Server-Code in diesem Repo aus. Gehoert ins Produkt-Backend.", "effort": "M"},
+    {"id": "IN-2", "status": "fehlt", "evidence": [".github/workflows/deploy.yml"], "gap": "Einziger Zeitgeber im Repo ist der Deploy-Workflow. Ein idempotenter Scheduler (Europe/Berlin) fehlt. GitHub-Actions-Cron ist dafuer ungeeignet (kein Zugriff auf die Produktions-DB, Minutengenauigkeit nicht garantiert).", "effort": "M"},
+    {"id": "IN-3", "status": "fehlt", "evidence": [], "gap": "Keine Domain-Events. Ob das Produkt-System heute schon auftrag_abgeschlossen / rechnung_ueberfaellig / termin_morgen kennt, ist die wichtigste offene Frage (blocking_questions).", "effort": "M"},
+    {"id": "IN-4", "status": "fehlt", "evidence": [], "gap": "Kein Posteingang. Laut Spezifikation ohnehin mvp=false.", "effort": "L"},
+    {"id": "Q-1", "status": "fehlt", "evidence": [], "gap": "Keine Queue. Technologiewahl haengt an der DB des Produkt-Systems (OD-2).", "effort": "M"},
+    {"id": "Q-2", "status": "fehlt", "evidence": [], "gap": "Task-Router fehlt. Er ist der Hebel fuer S3 (kein Modell-Aufruf bei template/deterministic) und sollte den task_catalog als versionierte Datei im Repo lesen, nicht als DB-Tabelle.", "effort": "M"},
+    {"id": "Q-3", "status": "fehlt", "evidence": [], "gap": "Kein Worker-Prozess. GitHub Pages kann keinen betreiben - ein dauerhaft laufender Dienst (z. B. Railway, wo autopilot.mobilnova.de bereits laeuft) ist Voraussetzung.", "effort": "L"},
+    {"id": "Q-4", "status": "fehlt", "evidence": [], "gap": "Fortsetzung nach Freigabe fehlt. Haengt an DATA-1 (Statusmaschine) und AP-1.", "effort": "M"},
+    {"id": "Q-5", "status": "fehlt", "evidence": [], "gap": "Dispatcher mit reservierten P1-Slots fehlt vollstaendig.", "effort": "L"},
+    {"id": "Q-6", "status": "fehlt", "evidence": [], "gap": "Jitter/Off-Peak fehlt. Billigstes Item mit groesster Wirkung, sobald IN-2 steht.", "effort": "S"},
+    {"id": "Q-7", "status": "fehlt", "evidence": [], "gap": "Kein Token-Bucket, kein Backoff. Ohne ihn fuehrt die erste Lastspitze zu einer 429-Welle.", "effort": "M"},
+    {"id": "Q-8", "status": "fehlt", "evidence": [], "gap": "Abbruchgrenzen (max_turns, max_cost, Wall-Clock) fehlen. Muessen serverseitig im Worker sitzen, nicht nur in der Agenten-Definition.", "effort": "S"},
+    {"id": "Q-9", "status": "fehlt", "evidence": [], "gap": "Autoscaling fehlt; laut Spezifikation mvp=false und ohnehin erst nach OPS-4 sinnvoll.", "effort": "M"},
+    {"id": "INF-1", "status": "fehlt", "evidence": [".github/workflows/deploy.yml", "public/CNAME"], "gap": "Es gibt nur statisches Hosting (GitHub Pages, CDN). Kein Load Balancer, keine Health-Checks, keine zweite Instanz fuer API oder MCP-Server - beide existieren noch nicht.", "effort": "M"},
+    {"id": "INF-2", "status": "fehlt", "evidence": [], "gap": "Graceful Shutdown ist erst mit Q-3 definierbar. Ohne ihn erzeugt jeder Deploy das Risiko doppelter Versendung (Szenario S8).", "effort": "S"},
+    {"id": "INF-3", "status": "fehlt", "evidence": [], "gap": "Kein Lasttest, keine Testinfrastruktur. Im Repo existiert ueberhaupt kein Testlauf (package.json hat nur dev/build/start/lint).", "effort": "M"},
+    {"id": "AG-0", "status": "fehlt", "evidence": [], "gap": "Kein Orchestrator, keine Prompt-Dateien. Empfehlung: AG-0 NICHT im Walking Skeleton bauen (Begruendung in plan.md, Phase 1).", "effort": "M"},
+    {"id": "AG-1", "status": "fehlt", "evidence": [], "gap": "Kein Agent vorhanden. Kritische Randbedingung aus der eigenen Aussenkommunikation: 'Rechnungen rechnet immer das Regelwerk, nie die KI' (src/components/ERechnung.tsx:22) und 'Preise, Betraege und Steuern rechnet immer deine Preisliste, nie die KI' (src/components/Faq.tsx:9). Betraege duerfen also nicht nur 'aus Tools kommen', sie duerfen den Agenten gar nicht erst zur Berechnung erreichen.", "effort": "L"},
+    {"id": "AG-2", "status": "fehlt", "evidence": [], "gap": "Kein Kommunikations-Agent. Tonalitaet und Signatur haengen an DATA-3.", "effort": "M"},
+    {"id": "AG-3", "status": "fehlt", "evidence": [], "gap": "Kein Marketing-Agent; mvp=false.", "effort": "M"},
+    {"id": "AG-4", "status": "fehlt", "evidence": [], "gap": "Kein Termin-Agent; mvp=false. Reine Erinnerungen laufen als template (siehe task_catalog).", "effort": "M"},
+    {"id": "AG-X", "status": "fehlt", "evidence": [], "gap": "Kein Verzeichnis fuer Agenten-Definitionen. Vorschlag: agents/<id>/{agent.json,prompt.md} im Produkt-Repo, damit ein neuer Agent ohne Worker-Aenderung entsteht (conventions.prompts).", "effort": "S"},
+    {"id": "MCP-0", "status": "fehlt", "evidence": [], "gap": "Kein MCP-Server. Er ist das Herzstueck und der einzige Ort, an dem Mandantentrennung durchgesetzt wird. Erfordert zwingend die Auth-Infrastruktur des Produkt-Systems (kurzlebiges, mandantengebundenes Token).", "effort": "L"},
+    {"id": "MCP-1", "status": "fehlt", "evidence": [], "gap": "Keine read-Tools. Ob get_price_list, list_open_invoices usw. auf bestehende Services zeigen koennen, ist unbekannt (siehe existing_capabilities).", "effort": "M"},
+    {"id": "MCP-2", "status": "fehlt", "evidence": [], "gap": "Keine draft-Tools. Setzen voraus, dass Entwuerfe im Bestandssystem als eigener Zustand existieren (z. B. Rechnungsentwurf). Unbekannt.", "effort": "M"},
+    {"id": "MCP-3", "status": "fehlt", "evidence": [], "gap": "Keine external-Tools. Guardrail: Versand ausschliesslich ueber den bestehenden Versandweg des Produkt-Systems, kein zweiter Mailer.", "effort": "M"},
+    {"id": "MCP-4", "status": "fehlt", "evidence": [], "gap": "request_approval / add_task_note fehlen.", "effort": "S"},
+    {"id": "MCP-5", "status": "fehlt", "evidence": [], "gap": "Marketing-Tools fehlen; mvp=false.", "effort": "M"},
+    {"id": "AP-1", "status": "fehlt", "evidence": [], "gap": "Keine Freigabe-Inbox. Die Landingpage verspricht sie bereits ausdruecklich ('Jeder Vorschlag landet zuerst bei dir', src/components/Pillars.tsx:39) - das Item traegt damit Vertriebsgewicht, nicht nur technisches.", "effort": "M"},
+    {"id": "AP-2", "status": "fehlt", "evidence": [], "gap": "Autonomie-Stufen fehlen. Zusaetzlich zur Spezifikation noetig: die auf der Website versprochene 'Automatik je Ablauf nach N unveraenderten Freigaben' (src/components/Faq.tsx:9). Das ist eine vierte Quelle fuer die Freigaberegel neben Plan-Stufe und Mandanteneinstellung und muss im Datenmodell vorgesehen werden.", "effort": "M"},
+    {"id": "AP-3", "status": "fehlt", "evidence": [], "gap": "Kein Ablauf von Freigaben.", "effort": "S"},
+    {"id": "BIL-1", "status": "fehlt", "evidence": [], "gap": "Keine Credit-Definition im Code. Gewichte gehoeren als versionierte Datei neben den task_catalog, nicht in die DB.", "effort": "S"},
+    {"id": "BIL-2", "status": "fehlt", "evidence": [], "gap": "Kein Kontingent, keine Verbrauchsanzeige. Regel aus der Spezifikation beachten: erschoepftes Kontingent pausiert P3/P4, blockiert aber nie P1/P2.", "effort": "M"},
+    {"id": "BIL-3", "status": "fehlt", "evidence": [], "gap": "Keine Zahlungsabwicklung. Preise sind auf autopilot.mobilnova.de (fremdes Repo) bereits oeffentlich - die dort genannten Zahlen muessen mit BIL-1/BIL-4 zusammenpassen. Im Pilot ist manuelle Rechnung zulaessig.", "effort": "L"},
+    {"id": "BIL-4", "status": "fehlt", "evidence": [], "gap": "Kein Margen-Dashboard. Voraussetzung fuer die pricing_rule (Preis je Credit >= 5x Kosten je Credit) und damit fuer jede Preiszusage.", "effort": "M"},
+    {"id": "BIL-5", "status": "fehlt", "evidence": [], "gap": "Keine Aktivierungs-Kennzahl. Umami (src/app/layout.tsx:46) misst nur Website-Reichweite, nicht Produktnutzung.", "effort": "S"},
+    {"id": "FE-1", "status": "fehlt", "evidence": [], "gap": "Keine App-Oberflaeche in diesem Repo. Gehoert in das Produkt-Frontend.", "effort": "M"},
+    {"id": "FE-2", "status": "fehlt", "evidence": [], "gap": "Kein Aufgaben-Eingang. Hinweis: non_goals schliesst ein Chat-Interface als Hauptbedienung aus - Freitext bleibt ein Feld neben Schnellaktionen.", "effort": "M"},
+    {"id": "FE-3", "status": "fehlt", "evidence": [], "gap": "Kein Aktivitaetsprotokoll. Direkt aus DATA-2 ableitbar, hoher wahrgenommener Nutzen ('Du siehst, was erledigt wurde', src/components/Pillars.tsx:40).", "effort": "S"},
+    {"id": "FE-4", "status": "fehlt", "evidence": [], "gap": "Keine Verbrauchsanzeige.", "effort": "S"},
+    {"id": "SEC-1", "status": "teilweise", "evidence": ["public/datenschutz.html", "public/impressum.html"], "gap": "Es gibt eine Datenschutzerklaerung fuer die Website (nur Hosting und Umami, §5). Sie deckt keine Verarbeitung von Betriebs- oder Endkundendaten durch ein KI-Modell ab. Es fehlen: AVV mit Anthropic, Eintrag im Verarbeitungsverzeichnis, dokumentierter Datenfluss, Loeschkonzept fuer Sessions, eigene AVV gegenueber den Betrieben. Muss vor dem ersten echten Kundendatensatz stehen - also vor dem Schattenbetrieb.", "effort": "M"},
+    {"id": "SEC-2", "status": "fehlt", "evidence": [], "gap": "Kein Schutz vor Prompt-Injection, weil es noch keine Verarbeitung gibt. Sobald Endkundentexte (Anfragen, Auftragsnotizen) in einen Prompt gelangen, ist S5 Pflichttest.", "effort": "M"},
+    {"id": "SEC-3", "status": "teilweise", "evidence": [".gitignore", "src/app/layout.tsx"], "gap": "Erfuellt ist nur der negative Teil: im Repo liegen keine Keys, es gibt keine einzige process.env-Nutzung. Es fehlen Secret-Store, getrennte Claude-Workspaces dev/prod und ein Spend-Limit in der Console.", "effort": "S"},
+    {"id": "SEC-4", "status": "fehlt", "evidence": [".github/workflows/deploy.yml"], "gap": "Es existiert kein Testlauf in CI (package.json kennt kein test-Skript, der Workflow baut nur). Die Mandantentrennungs-Tests brauchen also zuerst eine Teststufe in der Pipeline des Produkt-Repos.", "effort": "M"},
+    {"id": "OPS-1", "status": "fehlt", "evidence": [], "gap": "Kein Logging/Tracing/Alerting. Umami ist Website-Reichweitenmessung, nicht Betriebsueberwachung.", "effort": "M"},
+    {"id": "OPS-2", "status": "fehlt", "evidence": [], "gap": "Kein Eval-Set und keine Testinfrastruktur.", "effort": "M"},
+    {"id": "OPS-3", "status": "fehlt", "evidence": [], "gap": "Kein Testmandant, kein dry_run. dry_run ist zugleich die Grundlage des Schattenbetriebs (rollout.phase_0) und sollte deshalb frueh, nicht spaet gebaut werden.", "effort": "M"},
+    {"id": "OPS-4", "status": "fehlt", "evidence": [], "gap": "Keine Queue-Metriken. Ohne sie bleiben Slot-Zahl (OD-5) und Credit-Gewichte (OD-4) reine Hypothesen.", "effort": "M"}
+  ],
+  "existing_capabilities": [
+    {"task_type": "freitext_aufgabe", "exists": "unknown_repo_not_reachable", "evidence": [], "reuse_or_build": "build. Kein Bestandsaequivalent denkbar."},
+    {"task_type": "kundenanfrage_beantworten", "exists": "unknown_repo_not_reachable", "evidence": ["src/components/FeatureGrid.tsx:12 (Online-Terminanfragen von der Website ins System)"], "reuse_or_build": "Anfrage-Eingang vermutlich vorhanden (reuse als Event-Quelle), Beantwortung build."},
+    {"task_type": "angebot_entwerfen", "exists": "unknown_repo_not_reachable", "evidence": ["src/components/FeatureGrid.tsx:7 (Angebote & Auftraege)"], "reuse_or_build": "reuse fuer Positionen/Preise ueber MCP-Tools, build nur fuer Ermessen und Text."},
+    {"task_type": "rechnung_erstellen", "exists": "unknown_repo_not_reachable", "evidence": ["src/components/FeatureGrid.tsx:8 (Rechnungen & E-Rechnung)", "src/components/ERechnung.tsx:22 ('Rechnungen rechnet immer das Regelwerk, nie die KI')"], "reuse_or_build": "reuse zwingend. Rechnungs- und Steuerlogik inkl. XRechnung/ZUGFeRD und §19 wird NICHT nachgebaut (codebase_guardrails, non_goals). Der Agent darf nur vervollstaendigen und formulieren."},
+    {"task_type": "fertigmeldung", "exists": "unknown_repo_not_reachable", "evidence": [], "reuse_or_build": "reuse des bestehenden Versandwegs, Vorlage build."},
+    {"task_type": "terminbestaetigung", "exists": "unknown_repo_not_reachable", "evidence": ["src/components/FeatureGrid.tsx:11 (Kalender & Stellplaetze)"], "reuse_or_build": "reuse Kalender, Vorlage build."},
+    {"task_type": "termin_erinnerung", "exists": "unknown_repo_not_reachable", "evidence": ["src/components/FeatureGrid.tsx:11", "src/components/FeatureGrid.tsx:15 (Nachpflege-Erinnerung: automatisch nach der Versiegelung)"], "reuse_or_build": "wahrscheinlich reuse. Die Website behauptet bereits laufende automatische Erinnerungen - falls es sie gibt, wird der Autopilot davor gehaengt (anbinden), nicht daneben gestellt."},
+    {"task_type": "offene_posten_pruefen", "exists": "unknown_repo_not_reachable", "evidence": ["src/components/FeatureGrid.tsx:10 (Mahnwesen: Erinnerungen laufen automatisch)"], "reuse_or_build": "wahrscheinlich reuse als reine Abfrage. Kostet 0 Credits, darf deshalb niemals ein Modell aufrufen."},
+    {"task_type": "mahnlauf", "exists": "unknown_repo_not_reachable", "evidence": ["src/components/FeatureGrid.tsx:10"], "reuse_or_build": "hybrid: Auswahl und Betraege reuse, Ton und Eskalationsentscheidung build. WICHTIG: existiert bereits ein automatisches Mahnwesen, darf der Autopilot es nicht doppelt ausloesen - Abschaltung des Altpfads je Mandant gehoert in die Umsetzung."},
+    {"task_type": "bewertungsanfrage", "exists": "unknown_repo_not_reachable", "evidence": ["src/components/FeatureGrid.tsx:17 (Newsletter & Aktionen, mit Einwilligung)"], "reuse_or_build": "reuse Versandweg und Einwilligungspruefung, Vorlage build."},
+    {"task_type": "reaktivierung", "exists": "unknown_repo_not_reachable", "evidence": ["src/components/FeatureGrid.tsx:17"], "reuse_or_build": "build, mvp=false."},
+    {"task_type": "social_post", "exists": "unknown_repo_not_reachable", "evidence": ["src/components/FeatureGrid.tsx:5 (Fotodokumentation Vorher/Nachher)"], "reuse_or_build": "Bildquelle reuse, Rest build, mvp=false."}
+  ],
+  "assumptions": [
+    "A1: Es existiert ein separates Produkt-System (Kunden, Fahrzeuge, Annahme, Auftraege, Rechnungen, Kalender, Mahnwesen). Belegt ist das nur durch Marketingtexte dieses Repos (src/components/FeatureGrid.tsx, src/components/Pillars.tsx:44-48, src/components/Faq.tsx:13), nicht durch Code.",
+    "A2: Dieses Repo bleibt die Landingpage und bekommt keinen Autopilot-Code. Alles aus components gehoert ins Produkt-Repo. Hier landen nur diese beiden Dokumente.",
+    "A3: Das Produkt-System hat bereits eine Mandantentrennung mit einer stabilen tenant-Kennung, an die der MCP-Server sein Session-Token binden kann. Ohne sie ist MCP-0 nicht umsetzbar.",
+    "A4: Railway ist als Betriebsumgebung fuer dauerhaft laufende Dienste bereits im Einsatz (src/lib/links.ts nennt autopilot.mobilnova.de auf Railway). Worker, Dispatcher und MCP-Server koennen dort laufen, ohne eine neue Hosting-Entscheidung zu erzwingen.",
+    "A5: Auf autopilot.mobilnova.de sind Preise und Pilotkonditionen bereits oeffentlich (src/components/Pillars.tsx:105, src/components/Faq.tsx:4). Die Credit-Gewichte aus task_catalog muessen zu diesen bereits kommunizierten Zahlen passen - sie sind nicht mehr voellig frei waehlbar.",
+    "A6: 'Fuenf Pilotbetriebe' (Website) und 'zwei bis drei Pilotbetriebe im Schattenbetrieb' (rollout.phase_0) meinen dieselbe Gruppe in unterschiedlichen Stufen, kein Widerspruch.",
+    "A7: Die Zusage 'Automatik erst nach drei unveraenderten Freigaben' (src/components/Faq.tsx:9) ist verbindlich und erweitert AP-2 um einen Zaehler je Mandant und Aktionstyp."
+  ],
+  "blocking_questions": [
+    "B1: Wie heisst das Repo des Produkt-Systems und wie bekommt diese Session Zugriff? 'mobilnova/mobilnova' und 'mobilnova/mobilnova-validation' sind nicht erreichbar. Ohne dieses Repo ist Schritt 0 der Anforderungen (Stack ermitteln) nur fuer die Landingpage erfuellbar und jede Aufwandsschaetzung bleibt grob.",
+    "B2: Existiert das Produkt-System ueberhaupt schon als lauffaehige Software, oder beschreibt die Landingpage einen Zielzustand? Davon haengt ab, ob der Autopilot ein Aufsatz (Plan wie beschrieben) oder Teil eines Neubaus ist (dann aendert sich die Reihenfolge grundlegend).",
+    "B3: Welche Datenbank nutzt das Produkt-System? Entscheidet OD-2 (Queue-Technologie) und ob DATA-1..7 als neue Tabellen im selben Cluster liegen koennen.",
+    "B4: Publiziert das Produkt-System heute Domain-Events, oder muessen auftrag_abgeschlossen / rechnung_ueberfaellig / termin_morgen erst erzeugt werden? Das ist der groesste einzelne Aufwandsposten in IN-3.",
+    "B5: Gibt es bereits ein automatisches Mahnwesen und automatische Terminerinnerungen (von der Website behauptet)? Wenn ja: anbinden und Altpfad je Mandant abschalten, sonst versendet ein Betrieb doppelt.",
+    "B6: Ueber welchen Weg verschickt das Produkt-System heute E-Mails? Der Guardrail verlangt genau einen Versandweg - ein zweiter Mailer im Autopilot waere ein Regelbruch.",
+    "B7: Ist die AVV mit Anthropic geklaert (SEC-1)? Sie ist Vorbedingung fuer den Schattenbetrieb mit echten Daten und kann ueber OD-1 die Runtime kippen."
+  ],
+  "open_decisions": [
+    {
+      "id": "OD-1",
+      "question": "Managed Agents oder Agent SDK als Runtime",
+      "recommendation": "Managed Agents fuer den MVP, aber mit einer duennen eigenen Runtime-Schicht dahinter",
+      "rationale": "Die Empfehlung der Spezifikation traegt, solange die Agenten-Definitionen (AG-X) als Dateien im Repo liegen und der Worker sie ueber eine schmale eigene Schnittstelle startet. Dann ist ein Wechsel zum SDK eine Anpassung an einer Stelle statt einer Neuimplementierung. Der Beta-Status und die offene DSGVO-Frage (SEC-1, risks[0]) machen diese Abstraktion zur guenstigen Versicherung - sie kostet wenige Tage, verhindert aber, dass eine Datenschutzpruefung den Plan umwirft. Entscheidung muss vor Phase 1 fallen, nicht davor liegen bleiben.",
+      "decide_by": "vor Phase 1"
+    },
+    {
+      "id": "OD-2",
+      "question": "Queue- und Dispatcher-Technologie",
+      "recommendation": "Postgres-Tabelle als Queue mit SELECT ... FOR UPDATE SKIP LOCKED, eigener Dispatcher-Prozess - sofern das Produkt-System Postgres nutzt (B3 klaeren)",
+      "rationale": "Bei erwarteten Groessenordnungen (einige Tausend Tasks pro Tag, 12 Slots) ist eine Message-Queue wie Redis/SQS die teurere Antwort: Die Anforderungen verlangen ohnehin Auswahl nach freien Slots je Lane, Mandantenlimit und Rate-Limit-Budget (Q-5). Genau das kann eine klassische Queue nicht, es ist eine Abfrage. Zwei Datenspeicher haetten ausserdem ein Konsistenzproblem zwischen autopilot_tasks und Queue-Eintrag. Nutzt das Produkt-System eine andere DB, gilt dasselbe Muster mit deren Mitteln; nur bei MySQL ohne SKIP-LOCKED-Unterstuetzung waere ein eigener Broker zu pruefen.",
+      "decide_by": "vor Phase 1, haengt an B3"
+    },
+    {
+      "id": "OD-3",
+      "question": "Erster Versandkanal fuer Nachrichten",
+      "recommendation": "E-Mail zuerst - aber ueber den bestehenden Versandweg des Produkt-Systems (B6), nicht ueber einen neuen Dienst",
+      "rationale": "Folgt der Spezifikation. Zwei Einschraenkungen aus diesem Repo: Erstens wirbt die Website ausdruecklich mit WhatsApp ('Auch auf WhatsApp', src/components/Pillars.tsx:26) - das ist ein oeffentliches Versprechen mit eigener Genehmigungs- und Template-Logik, das im Vertrieb nicht als 'kommt sofort' dargestellt werden sollte. Zweitens verlangt der Guardrail genau einen Versandweg; ein eigener Mailer im Autopilot wuerde Zustellbarkeit, Signatur und Abmeldelogik des Bestandssystems umgehen.",
+      "decide_by": "Phase 1"
+    },
+    {
+      "id": "OD-4",
+      "question": "Preise, Kontingente und Credit-Gewichte",
+      "recommendation": "Gewichte als Hypothese uebernehmen, aber vor jeder weiteren Preiszusage im Schattenbetrieb messen - und zuerst mit den bereits veroeffentlichten Zahlen auf autopilot.mobilnova.de abgleichen",
+      "rationale": "Die Reihenfolge der Spezifikation ist richtig (messen, dann festlegen), sie steht hier aber unter einer Nebenbedingung: Preis und Pilotkonditionen sind bereits oeffentlich (A5). Wenn BIL-4 spaeter zeigt, dass die pricing_rule (>= 5x Kosten je Credit) mit diesen Zahlen nicht haltbar ist, muss das Kontingent angepasst werden, nicht der beworbene Preis. Deshalb: das Kontingent im Pilot bewusst niedrig ansetzen und erst nach der Messung erhoehen - nach oben korrigieren ist moeglich, nach unten nicht.",
+      "decide_by": "nach Schattenbetrieb, vor dem ersten zahlenden Kunden"
+    },
+    {
+      "id": "OD-5",
+      "question": "Startwert fuer die Slot-Anzahl",
+      "recommendation": "12 gesamt, davon 4 fest fuer P1 reserviert; Korrektur nach OPS-4",
+      "rationale": "Der Startwert der Spezifikation ist plausibel. Die Reservierung fuer P1 (lanes: 30 Prozent) ist der eigentlich wichtige Teil: Ohne sie halten lange P3-Mahnlaeufe alle Slots und Szenario S4 scheitert, egal wie hoch die Gesamtzahl ist. 30 Prozent von 12 ergibt gerundet 4. Solange OPS-4 keine echten Aufgabendauern liefert, ist jede genauere Zahl Schein-Genauigkeit.",
+      "decide_by": "Phase 4, vorher unkritisch"
+    },
+    {
+      "id": "OD-6",
+      "question": "Welche Aufgabentypen existieren im Bestandssystem bereits deterministisch",
+      "recommendation": "Nicht entscheidbar in dieser Session - der Bericht ist nach Zugriff auf das Produkt-Repo (B1) einmal zu wiederholen, bevor gebaut wird",
+      "rationale": "Die Landingpage behauptet fuer mindestens vier Typen eine bestehende Umsetzung (Mahnwesen, Terminerinnerung inkl. Nachpflege, Online-Terminanfragen, Rechnungen inkl. E-Rechnung). Waere auch nur das Mahnwesen vorhanden, aendert sich der Zuschnitt von mahnlauf und offene_posten_pruefen erheblich - und es entsteht ein Doppelversand-Risiko (B5). Eine Entscheidung ohne diesen Blick waere geraten, nicht begruendet.",
+      "decide_by": "sofort nach B1"
+    },
+    {
+      "id": "OD-7",
+      "question": "NEU: Wo lebt der Autopilot-Code?",
+      "recommendation": "Im Produkt-Repo, nicht in mobilnova-site und nicht in einem dritten Repo",
+      "rationale": "Der MCP-Server ruft Rechnungs-, Preis- und Terminlogik auf, statt sie nachzubauen (codebase_guardrails). Liegt er in einem eigenen Repo, wird aus jedem Tool-Aufruf ein Netzwerk-Aufruf mit eigener Auth, eigener Versionierung und eigenem Deploy-Takt - genau die Kopplung, die der Guardrail vermeiden will. mobilnova-site scheidet technisch aus: output:\"export\" (next.config.mjs) kann keinen Server-Code ausfuehren. Diese Entscheidung fehlt in der Spezifikation, blockiert aber Phase 1.",
+      "decide_by": "vor Phase 1"
+    }
+  ],
+  "next_run": "Diesen Bericht nach Zugriff auf das Produkt-Repo erneut erzeugen. Dann werden aus 'unknown_repo_not_reachable' echte Befunde mit Dateipfaden, und der Diff zu dieser Fassung zeigt, was tatsaechlich zu bauen ist."
+}

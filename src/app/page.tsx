@@ -3,6 +3,7 @@ import Pain from "@/components/Pain";
 import Pillars from "@/components/Pillars";
 import FeatureGrid from "@/components/FeatureGrid";
 import Proof from "@/components/Proof";
+import Beispiel from "@/components/Beispiel";
 import ERechnung from "@/components/ERechnung";
 import Audience from "@/components/Audience";
 import Founder from "@/components/Founder";
@@ -19,6 +20,7 @@ export default function Home() {
       <Pillars />
       <FeatureGrid />
       <Proof />
+      <Beispiel />
       <ERechnung />
       <Audience />
       <Founder />

@@ -38,6 +38,9 @@ export default function Footer() {
               <a className="text-accent hover:underline" href="/datenschutz.html">
                 Datenschutzerklärung
               </a>
+              <a className="text-accent hover:underline" href="/nutzungsbedingungen.html">
+                Nutzungsbedingungen
+              </a>
             </div>
           </div>
         </div>

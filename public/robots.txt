@@ -4,3 +4,4 @@ Allow: /
 # Rechtliche Seiten aus dem Index halten (nicht relevant für Suchmaschinen)
 Disallow: /impressum.html
 Disallow: /datenschutz.html
+Disallow: /nutzungsbedingungen.html

@@ -91,7 +91,7 @@
       dabei sieht der Server technisch deine IP-Adresse, speichert sie aber nicht.</p>
     <p>Rechtsgrundlage ist unser berechtigtes Interesse an einer statistischen Auswertung und
       Verbesserung unseres Angebots (Art. 6 Abs. 1 lit. f DSGVO). Du kannst der Messung jederzeit
-      widersprechen (Abschnitt 8), etwa per Nachricht an uns oder mit einem Tracking-Blocker im Browser.</p>
+      widersprechen (Abschnitt 9), etwa per Nachricht an uns oder mit einem Tracking-Blocker im Browser.</p>
 
     <h2>5. Kontaktaufnahme</h2>
     <p>Wenn du uns per E-Mail oder Telefon kontaktierst, verarbeiten wir deine Angaben (Name, Kontaktdaten,
@@ -138,7 +138,7 @@
       <li><b>Postmark</b> (ActiveCampaign, LLC, USA) oder ein anderer SMTP-Anbieter: Versand und Empfang von
         E-Mails (z. B. Rechnungen, Erinnerungen, Einladungen).</li>
       <li><b>Auf Wunsch des Betriebs und nur nach dessen eigener Verbindung:</b> Google (Kalender,
-        Google-Daten), Meta (Instagram/Facebook), SumUp (Kartenzahlung), GoCardless (Lastschrift),
+        Search Console, Analytics, Ads), Meta (Instagram/Facebook), SumUp (Kartenzahlung), GoCardless (Lastschrift),
         WhatsApp Business. Diese Verbindungen sind standardmäßig aus.</li>
     </ul>
     <p>Soweit dabei Daten in die USA oder andere Drittländer gelangen, stützt sich die Übermittlung auf
@@ -146,7 +146,86 @@
       Daten geben wir nur an diese Dienstleister und nur im erforderlichen Umfang weiter; wir verkaufen
       keine Daten.</p>
 
-    <h2>8. Deine Rechte</h2>
+    <h2>8. Google-Anbindungen (Kalender, Search Console, Analytics, Ads)</h2>
+    <p>Betriebe können in mobilnova ihr Google-Konto verbinden: den Kalender mit Google Kalender
+      synchronisieren und Kennzahlen aus der Google Search Console, aus Google Analytics und aus Google Ads
+      auswerten. Jede dieser vier Verbindungen ist getrennt. Sie entsteht nur, wenn ein Betrieb in den
+      Einstellungen selbst auf „Mit Google verbinden“ klickt, und fragt bei Google nur die Berechtigung an,
+      die dieser Dienst braucht. Ohne Verbindung fließt nichts zu oder von Google.</p>
+    <p><b>Welchen Zugriff wir anfragen und was wir damit tun.</b></p>
+    <ul>
+      <li><b>Google Kalender</b> (<span style="font-family:var(--mono)">calendar.app.created</span>): Die Software legt in Google einen
+        eigenen Kalender namens „mobilnova“ an und darf nur dessen Ereignisse lesen, anlegen, ändern und
+        löschen. Auf andere Kalender, Kontakte, E-Mails oder Dateien hat sie keinen Zugriff.
+        <i>Von mobilnova nach Google</i> gehen Termine und Notizen (Titel, Beginn, Dauer, Beschreibung). In der
+        Voreinstellung steht dort nur die Terminart; Kundenname, Fahrzeug und Notizen werden nur übertragen,
+        wenn der Betrieb das ausdrücklich einschaltet und bestätigt. Telefonnummer, E-Mail-Adresse und
+        Anschrift von Kunden übertragen wir nie, und es werden keine Personen eingeladen.
+        <i>Von Google nach mobilnova</i> kommen Titel, Beschreibung, Beginn und Dauer der Ereignisse in diesem
+        Kalender sowie Verschiebungen und Löschungen. Ein dort neu angelegtes Ereignis wird in mobilnova zur
+        Notiz ohne Bezug zu einem Kunden.</li>
+      <li><b>Google Search Console</b> (<span style="font-family:var(--mono)">webmasters.readonly</span>, nur Lesen): Für die Website, die
+        der Betrieb auswählt, rufen wir die Tageswerte (Klicks, Impressionen) ab und zeigen die häufigsten
+        Suchbegriffe, mit denen Besucher den Betrieb bei Google finden. Die Suchbegriffe werden bei jedem
+        Aufruf neu abgefragt und nicht gespeichert.</li>
+      <li><b>Google Analytics</b> (<span style="font-family:var(--mono)">analytics.readonly</span>, nur Lesen): Für die ausgewählte Property
+        rufen wir die Tageswerte für Sitzungen und Conversions ab und lesen die Liste der Properties, aus der
+        der Betrieb auswählt.</li>
+      <li><b>Google Ads</b> (<span style="font-family:var(--mono)">adwords</span>): Google bietet für die Ads-Schnittstelle nur diese eine
+        Berechtigung an; technisch erlaubt sie auch Änderungen. Die Software stellt ausschließlich lesende
+        Abfragen: die Liste der zugänglichen Konten zur Auswahl und, je Tag und Kampagne, Kampagnenname,
+        Kosten, Klicks, Impressionen und Conversions des gewählten Kontos. Sie legt keine Kampagnen an,
+        ändert keine und lädt keine Kunden- oder Zielgruppendaten zu Google hoch.</li>
+    </ul>
+    <p>Über Search Console, Analytics und Ads gehen <b>keine Kundendaten an Google</b>; es fließen nur
+      zusammengefasste Kennzahlen von Google zu mobilnova.</p>
+    <p><b>Was wir speichern.</b> Von Search Console, Analytics und Ads speichern wir ausschließlich
+      tageweise zusammengefasste Kennzahlen (Datum, Kanal bzw. Kampagnenname, Kosten, Klicks, Impressionen,
+      Conversions, Sitzungen) und die Auswahl von Konto, Website bzw. Property in den Daten des Betriebs.
+      Die Kennzahlen enthalten keine Angaben zu einzelnen Besuchern oder Kunden. Die von Google
+      ausgestellten Zugangstoken speichern wir verschlüsselt in der Datenbank, getrennt je Betrieb.</p>
+    <p><b>Wofür wir die Daten verwenden.</b> Ausschließlich, um die Funktion zu betreiben, die der Betrieb in
+      mobilnova sieht und eingeschaltet hat: den Kalenderabgleich bzw. die Auswertung der Kennzahlen. Wir
+      verwenden Google-Nutzerdaten nicht für Werbung, nicht zur Profilbildung und nicht zum Training von
+      KI-Modellen, wir verkaufen sie nicht und geben sie nicht an Dritte weiter, außer soweit das zur
+      Bereitstellung dieser Funktion unumgänglich ist (unsere Dienstleister aus Abschnitt 7), zur Einhaltung
+      von Gesetzen oder zur Abwehr von Missbrauch. Mitarbeiter von mobilnova lesen diese Daten nicht, außer
+      der Betrieb bittet uns im Einzelfall um Hilfe und stimmt zu, oder es ist zur Aufklärung von
+      Sicherheitsvorfällen oder aufgrund von Gesetzen erforderlich.</p>
+    <p>mobilnovas Verwendung und Weitergabe von Informationen, die wir von Google-APIs erhalten, entspricht
+      der <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Nutzerdatenrichtlinie für Google-API-Dienste</a>
+      (Google API Services User Data Policy), einschließlich der Anforderungen zur eingeschränkten Nutzung
+      („Limited Use“).</p>
+    <p><b>Rollen und Rechtsgrundlage.</b> Für die Kalender- und Kennzahlendaten ist der Betrieb Verantwortlicher,
+      mobilnova Auftragsverarbeiter (Abschnitt 6). Der Betrieb stützt den Kalenderabgleich auf sein berechtigtes
+      Interesse an einer abgestimmten Terminplanung (Art. 6 Abs. 1 lit. f DSGVO) oder auf die Vertragsabwicklung
+      mit seinen Kunden (Art. 6 Abs. 1 lit. b DSGVO), die Auswertung der Kennzahlen auf sein berechtigtes
+      Interesse an der Steuerung seiner Werbung und seiner Website (Art. 6 Abs. 1 lit. f). Für sein Google-Konto
+      gelten zusätzlich die Bedingungen von Google; bei Google Workspace schließt der Betrieb dafür seinen
+      eigenen Auftragsverarbeitungsvertrag mit Google. Google LLC sitzt in den USA (Abschnitt 7:
+      Standardvertragsklauseln oder Angemessenheitsbeschluss). Näheres in der
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>.</p>
+    <p><b>Speicherdauer, Trennen und Löschen.</b></p>
+    <ul>
+      <li>Der Betrieb kann jede der vier Verbindungen jederzeit in den Einstellungen mit „Verbindung trennen“
+        beenden. Dann löschen wir bei uns die Zugangstoken; beim Kalender zusätzlich die Einstellungen und die
+        Zuordnung zwischen mobilnova-Terminen und Google-Ereignissen. Der Abruf bzw. Abgleich endet sofort.</li>
+      <li>Die Ereignisse im Google-Kalender „mobilnova“ bleiben im Google-Konto des Betriebs bestehen; der
+        Betrieb löscht diesen Kalender dort selbst, wenn er sie nicht mehr will. Notizen, die aus Google
+        nach mobilnova übernommen wurden, gehören zu den Daten des Betriebs in mobilnova und bleiben dort, bis
+        der Betrieb sie löscht oder sein Konto gelöscht wird.</li>
+      <li>Kennzahlen, die bereits aus Search Console, Analytics oder Ads abgerufen wurden, bleiben nach dem
+        Trennen in den Daten des Betriebs, bis dieser sie löschen lässt oder sein Konto gelöscht wird.</li>
+      <li>Den Zugriff kann der Betrieb außerdem jederzeit in seinem Google-Konto unter
+        <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>
+        widerrufen. Dann kann die Software nicht mehr auf Google zugreifen.</li>
+      <li>Wird ein Betrieb bei uns gelöscht, löschen wir auch alle Kalender-, Kennzahlen- und
+        Verbindungsdaten. Gesetzliche Aufbewahrungspflichten bleiben davon unberührt.</li>
+      <li>Wird ein Kunde in mobilnova anonymisiert, schreiben wir die Anonymisierung beim nächsten Abgleich in
+        das Google-Ereignis durch, solange der Abgleich nach Google eingeschaltet ist.</li>
+    </ul>
+
+    <h2>9. Deine Rechte</h2>
     <p>Dir stehen nach der DSGVO folgende Rechte zu:</p>
     <ul>
       <li>Auskunft über die zu dir gespeicherten Daten (Art. 15),</li>
@@ -159,7 +238,7 @@
     <p>Zur Ausübung genügt eine formlose Nachricht an
       <a href="mailto:info@mobilnova.de">info@mobilnova.de</a>. Wir antworten in der Regel innerhalb eines Monats.</p>
 
-    <h2>9. Beschwerderecht bei der Aufsichtsbehörde</h2>
+    <h2>10. Beschwerderecht bei der Aufsichtsbehörde</h2>
     <p>Du hast das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Für uns zuständig ist:</p>
     <div class="card">
       <p class="ink">Die Landesbeauftragte für den Datenschutz und für das Recht auf Akteneinsicht Brandenburg</p>
@@ -167,7 +246,7 @@
       <p><a href="https://www.lda.brandenburg.de" target="_blank" rel="noopener">www.lda.brandenburg.de</a></p>
     </div>
 
-    <h2>10. Aktualität</h2>
+    <h2>11. Aktualität</h2>
     <p>Wir passen diese Datenschutzerklärung an, wenn sich die Datenverarbeitung ändert oder neue Funktionen
       hinzukommen. Maßgeblich ist die jeweils hier veröffentlichte Fassung (Stand: Oktober 2026).</p>
   </main>

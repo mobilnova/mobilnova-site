@@ -33,6 +33,9 @@ export default function Footer() {
               <li>
                 <a href="/datenschutz.html">Datenschutzerklärung</a>
               </li>
+              <li>
+                <a href="/nutzungsbedingungen.html">Nutzungsbedingungen</a>
+              </li>
             </ul>
           </div>
         </div>

@@ -1,0 +1,35 @@
+/* Impressum und Datenschutzerklärung von mobilnova.de: gleicher dunkler Look wie die Startseite.
+   Schriften liegen unter /fonts (selbst gehostet). */
+@font-face{font-family:"Manrope";src:url("/fonts/manrope-latin-wght-normal.woff2") format("woff2");font-weight:200 800;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url("/fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2");font-weight:100 800;font-display:swap}
+:root{color-scheme:dark;--bg:#0a0c0f;--ink:#eef2f4;--mute:#a0abb4;--faint:#7d8892;--line:#1f262c;--line-2:#323c44;--neon:#c8f03c;
+  --sans:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:46rem;margin:0 auto;padding:0 1.25rem}
+a{color:var(--ink);text-decoration-color:var(--line-2);text-underline-offset:.2em}
+a:hover{text-decoration-color:var(--neon)}
+:focus-visible{outline:3px solid var(--neon);outline-offset:3px}
+::selection{background:var(--neon);color:#0a0c0f}
+header{padding:1.4rem 0}
+.top{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;font-weight:800;font-size:1.2rem;letter-spacing:-.03em}
+.brand svg{display:block;flex:none}
+.back{font:500 .75rem/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute);text-decoration:none}
+.back:hover{color:var(--ink)}
+main{padding:2rem 0 4rem}
+h1{margin:.2rem 0 .6rem;font-weight:800;font-size:clamp(2.2rem,7vw,3.4rem);line-height:1.02;letter-spacing:-.04em}
+.stand{margin:0 0 2rem;color:var(--faint);font:500 .75rem/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+h2{margin:2.6rem 0 .5rem;padding-top:1.4rem;border-top:1px solid var(--line);font-weight:800;font-size:1.3rem;letter-spacing:-.02em;line-height:1.25}
+h2:first-of-type{border-top:0;padding-top:0}
+p,li{color:#d4dbe0;margin:.5rem 0}
+ul{padding-left:1.2rem}
+li::marker{color:var(--neon)}
+.card{border-left:2px solid var(--neon);padding:.3rem 0 .3rem 1.1rem;margin:1rem 0}
+.card p{margin:.1rem 0}
+.card .ink{color:var(--ink)}
+code,.mono{font-family:var(--mono);font-size:.88em}
+footer{border-top:1px solid var(--line);padding:1.6rem 0 2.4rem;color:var(--faint);font:500 .75rem/1.6 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+footer a{color:var(--mute);text-decoration:none}
+footer a:hover{color:var(--ink)}

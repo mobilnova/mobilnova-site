@@ -4,9 +4,8 @@ import "./globals.css";
 
 const TITEL = "mobilnova. Der Betrieb läuft. Du entscheidest.";
 const BESCHREIBUNG =
-  "Ein digitaler Assistent für kleine Betriebe. Er beantwortet Anfragen, bereitet Angebote vor, " +
-  "schlägt Termine vor und schreibt Rechnungen. Du gibst frei. Start bei Folierern, PPF- und " +
-  "Aufbereitungsbetrieben. In der Pilotphase, fünf Plätze.";
+  "Der digitale Assistent für deinen Betrieb: Anfragen, Angebote, Termine, Rechnungen. Du gibst frei. " +
+  "Für Folierer und Aufbereiter. Pilotphase, fünf Plätze.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mobilnova.de"),

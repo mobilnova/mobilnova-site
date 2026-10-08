@@ -1,16 +1,22 @@
 import Section from "@/components/Section";
 
 const ABLAUF: [string, string][] = [
-  ["21:04", "Eine Anfrage kommt per WhatsApp. Drei Fotos vom Fahrzeug, eine Zeile Text: Dach und Heckklappe in Mattschwarz."],
-  ["21:05", "Der Assistent liest Fotos und Nachricht, rechnet die Folie je Bauteil aus deiner Preisliste und schreibt einen Angebotsentwurf."],
-  ["07:30", "Du öffnest die Freigabe-Liste vor der Werkstatt, änderst den Preis für die Dachfolie und gibst frei."],
-  ["07:31", "Das Angebot geht raus, ein Terminvorschlag liegt bei."],
+  [
+    "20:30",
+    "Zwei Anfragen kommen rein. Per E-Mail fragt ein Kunde nach einem Termin. Per WhatsApp schickt ein anderer ein Foto von einem Lackschaden und fragt, ob sich das reparieren lässt.",
+  ],
+  [
+    "20:31",
+    "Der Assistent liest beide Nachrichten und das Foto, schaut in deinen Kalender und deine Preisliste und bereitet alles vor: Terminvorschlag, Angebot für die Reparatur und zwei Antworten.",
+  ],
+  ["07:30", "Du öffnest die Freigabe-Liste vor der Werkstatt, änderst bei Bedarf einen Preis und gibst frei."],
+  ["07:31", "Angebot, Terminplanung und Antworten gehen raus."],
 ];
 
 export default function Abend() {
   return (
     <Section no="03" label="Der Abend im Büro">
-      <h2>Anfrage um 21 Uhr. Angebot am nächsten Morgen.</h2>
+      <h2>Anfrage um 20:30. Antwort am nächsten Morgen.</h2>
       <p>
         So soll ein Abend aussehen, wenn der Assistent mitläuft. Ein Beispiel, noch nicht im Pilot gemessen.
       </p>

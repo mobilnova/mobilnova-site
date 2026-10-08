@@ -1,31 +1,23 @@
 import Section from "@/components/Section";
 
-type Zeile = { titel: string; text: string; status: string; art: "ok" | "wip" | "" };
+type Zeile = { titel: string; text: string };
 
 const ZEILEN: Zeile[] = [
   {
     titel: "Angebot aus Fotos",
     text: "Dein Kunde schickt Fotos und sagt, was er will. Der Assistent bereitet das Angebot vor, mit Folienbedarf je Bauteil und Arbeitszeit. Die Preise kommen aus deiner Preisliste.",
-    status: "In Arbeit",
-    art: "wip",
   },
   {
     titel: "Anfragen",
-    text: "Der Assistent arbeitet auf deiner bestehenden WhatsApp-Geschäftsnummer. Er bereitet Antworten auf Standardfragen vor, fragt fehlende Fotos nach und schlägt Termine vor. Du kannst jederzeit übernehmen.",
-    status: "In Arbeit",
-    art: "wip",
+    text: "Der Assistent arbeitet auf deiner bestehenden WhatsApp-Geschäftsnummer und mit deinen E-Mails. Er bereitet Antworten auf Standardfragen vor, fragt fehlende Fotos nach und schlägt Termine vor. Du kannst jederzeit übernehmen.",
   },
   {
     titel: "Termin und Rechnung",
     text: "Nach deiner Freigabe gehen Terminbestätigung und Erinnerung raus. Nach dem Auftrag liegt die Rechnung fertig da, auf Wunsch als E-Rechnung (XRechnung und ZUGFeRD).",
-    status: "Rechnung läuft · Terminvorschläge in Arbeit",
-    art: "ok",
   },
   {
     titel: "Freigabe",
-    text: "Jeder Vorschlag landet zuerst bei dir: freigeben, ändern oder ablehnen. Automatik schaltest du je Ablauf selbst frei, wenn du mehrere Vorschläge in Folge unverändert freigegeben hast. Standard: drei.",
-    status: "Grundsatz",
-    art: "",
+    text: "Jeder Vorschlag landet zuerst bei dir: freigeben, ändern oder ablehnen. Automatik gibt es erst, wenn du selbst auf die Stufe Automatik wechselst, weil du dem System genug vertraust.",
   },
 ];
 
@@ -48,38 +40,30 @@ const FUNDAMENT = [
 
 const BILDER = [
   {
-    src: "/screens/screen-annahme.png",
-    w: 2690,
-    h: 1320,
-    alt: "Fahrzeugannahme in mobilnova: acht Pflichtfotos rundum und Schadensmarkierung am Fahrzeugschema",
-    cap: "Annahme am Tablet",
-  },
-  {
-    src: "/screens/screen-angebot.png",
-    w: 1786,
-    h: 1310,
-    alt: "Fertiges Angebot als PDF mit Positionen, Steuerausweis und Gesamtbetrag",
-    cap: "Angebot als PDF",
+    src: "/screens/screen-eingang.png",
+    w: 2000,
+    h: 983,
+    alt: "Anfragen in mobilnova: WhatsApp, E-Mail, Instagram und Telefon in einer Liste, mit Quelle, Anliegen, Alter und Status",
+    cap: "Anfragen aus allen Kanälen an einer Stelle",
   },
   {
     src: "/screens/screen-kundenhistorie.png",
-    w: 2420,
-    h: 1300,
+    w: 2000,
+    h: 1358,
     alt: "Kundenhistorie mit Kennzahlen, Fahrzeug, abgeschlossenem Auftrag und ausgestellter Rechnung",
-    cap: "Kundenhistorie mit Rechnung",
+    cap: "Kundenhistorie mit Auftrag und Rechnung",
   },
 ];
 
 export default function Arbeit() {
   return (
-    <Section no="04" label="So arbeitet mobilnova">
+    <Section id="arbeit" no="04" label="So arbeitet mobilnova">
       <h2>Vier Dinge, die der Assistent dir abnimmt.</h2>
       <dl className="rows">
         {ZEILEN.map((z) => (
           <div className="row" key={z.titel}>
             <dt>
               <span className="t">{z.titel}</span>
-              <span className={`tag mono ${z.art}`}>{z.status}</span>
             </dt>
             <dd>{z.text}</dd>
           </div>

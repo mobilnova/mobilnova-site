@@ -7,10 +7,11 @@ export default function Header() {
       <div className="wrap head-in">
         <Logo />
         <nav className="nav mono" aria-label="Abschnitte">
-          <a href="#vision">Vision</a>
+          <a href="#warum">Warum Autopilot</a>
+          <a href="#arbeit">So arbeitet es</a>
           <a href="#grundsaetze">Grundsätze</a>
-          <a href="#weg">Der Weg</a>
-          <a href="#stand">Stand heute</a>
+          <a href="#pilot">Pilot</a>
+          <a href="#fragen">Fragen</a>
         </nav>
         <a className="login mono" href={APP_LOGIN}>
           Anmelden

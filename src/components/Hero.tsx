@@ -2,9 +2,9 @@ import Cta from "@/components/Cta";
 
 export default function Hero() {
   return (
-    <section className="hero" id="vision">
+    <section className="hero" id="top">
       <div className="wrap">
-        <p className="mono mute">Vision · für Folierer, PPF- und Aufbereitungsbetriebe</p>
+        <p className="mono mute">Für Folierer, PPF- und Aufbereitungsbetriebe</p>
         <h1 style={{ marginTop: "1.4rem" }}>
           <span>Der Betrieb läuft.</span>
           <span className="acc">Du entscheidest.</span>
@@ -13,12 +13,12 @@ export default function Hero() {
         <div className="hero-grid">
           <div>
             <p className="lead">
-              Wir wollen, dass jeder kleine Betrieb einen digitalen Assistenten hat. Er führt die digitale
-              Seite des Betriebs: Anfragen beantworten, Angebote vorbereiten, Termine vorschlagen,
-              Rechnungen schreiben. Du siehst, was er vorschlägt, und entscheidest.
+              mobilnova Autopilot ist der digitale Assistent für deinen Betrieb. Er beantwortet Anfragen,
+              bereitet Angebote vor, schlägt Termine vor und schreibt Rechnungen. Du siehst, was er
+              vorschlägt, und gibst frei.
             </p>
             <Cta stelle="hero" />
-            <p className="status mono faint">In Entwicklung · fünf Pilotplätze · kein Vertragsangebot</p>
+            <p className="status mono faint">Pilotphase · fünf Pilotplätze · kein Vertragsangebot</p>
           </div>
 
           <figure className="shot">

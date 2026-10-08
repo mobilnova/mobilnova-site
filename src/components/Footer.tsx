@@ -9,8 +9,7 @@ export default function Footer() {
           <div>
             <Logo />
             <p style={{ marginTop: "0.9rem", maxWidth: "26rem" }}>
-              Ein digitaler Assistent für kleine Betriebe. Wir starten bei Folierern, PPF- und
-              Aufbereitungsbetrieben.
+              Ein digitaler Assistent für Betriebe. Wir starten bei Folierern, PPF- und Aufbereitungsbetrieben.
             </p>
           </div>
           <div>

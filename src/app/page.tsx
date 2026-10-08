@@ -1,11 +1,10 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Anfang from "@/components/Anfang";
+import Warum from "@/components/Warum";
 import Abend from "@/components/Abend";
 import Arbeit from "@/components/Arbeit";
 import Grundsaetze from "@/components/Grundsaetze";
-import Weg from "@/components/Weg";
-import Stand from "@/components/Stand";
+import Pilot from "@/components/Pilot";
 import Investoren from "@/components/Investoren";
 import Faq from "@/components/Faq";
 import Final from "@/components/Final";
@@ -20,12 +19,11 @@ export default function Home() {
       <Header />
       <main id="inhalt">
         <Hero />
-        <Anfang />
+        <Warum />
         <Abend />
         <Arbeit />
         <Grundsaetze />
-        <Weg />
-        <Stand />
+        <Pilot />
         <Investoren />
         <Faq />
         <Final />

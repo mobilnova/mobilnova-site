@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     siteName: "mobilnova",
     title: TITEL,
     description: BESCHREIBUNG,
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "mobilnova" }],
   },
   alternates: { canonical: "https://mobilnova.de" },
 };

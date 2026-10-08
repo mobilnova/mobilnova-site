@@ -15,7 +15,7 @@ a:hover{text-decoration-color:var(--neon)}
 header{padding:1.4rem 0}
 .top{display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;font-weight:800;font-size:1.2rem;letter-spacing:-.03em}
-.brand svg{display:block;flex:none}
+.brand img{display:block;height:2.5rem;width:auto}
 .back{font:500 .75rem/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute);text-decoration:none}
 .back:hover{color:var(--ink)}
 main{padding:2rem 0 4rem}

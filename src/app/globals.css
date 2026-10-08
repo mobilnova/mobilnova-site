@@ -73,8 +73,7 @@ a:hover { text-decoration-color: var(--neon); }
 .head { padding: 1.4rem 0; }
 .head-in { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .logo { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-.logo-word { font-weight: 800; font-size: 1.2rem; letter-spacing: -0.03em; }
-.tile { flex: none; display: block; }
+.logo img { display: block; height: 2.5rem; width: auto; }
 .nav { display: none; gap: 1.6rem; }
 .nav a { text-decoration: none; color: var(--mute); }
 .nav a:hover { color: var(--ink); }

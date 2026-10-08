@@ -40,25 +40,18 @@ const FUNDAMENT = [
 
 const BILDER = [
   {
-    src: "/screens/screen-annahme.png",
-    w: 2690,
-    h: 1320,
-    alt: "Fahrzeugannahme in mobilnova: acht Pflichtfotos rundum und Schadensmarkierung am Fahrzeugschema",
-    cap: "Annahme am Tablet",
-  },
-  {
-    src: "/screens/screen-angebot.png",
-    w: 1786,
-    h: 1310,
-    alt: "Fertiges Angebot als PDF mit Positionen, Steuerausweis und Gesamtbetrag",
-    cap: "Angebot als PDF",
+    src: "/screens/screen-eingang.png",
+    w: 2000,
+    h: 983,
+    alt: "Anfragen in mobilnova: WhatsApp, E-Mail, Instagram und Telefon in einer Liste, mit Quelle, Anliegen, Alter und Status",
+    cap: "Anfragen aus allen Kanälen an einer Stelle",
   },
   {
     src: "/screens/screen-kundenhistorie.png",
-    w: 2420,
-    h: 1300,
+    w: 2000,
+    h: 1358,
     alt: "Kundenhistorie mit Kennzahlen, Fahrzeug, abgeschlossenem Auftrag und ausgestellter Rechnung",
-    cap: "Kundenhistorie mit Rechnung",
+    cap: "Kundenhistorie mit Auftrag und Rechnung",
   },
 ];
 

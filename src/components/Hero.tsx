@@ -26,8 +26,8 @@ export default function Hero() {
             <img
               src="/screens/screen-freigaben.png"
               alt="Freigabe-Ansicht in mobilnova: eine vorgeschlagene Terminerinnerung mit fertigem Betreff und Text und den Knöpfen Freigeben, Ändern, Ablehnen"
-              width={2420}
-              height={1460}
+              width={1600}
+              height={1496}
             />
             <figcaption className="cap mono faint">Freigabe-Ansicht, laufendes System, Beispieldaten</figcaption>
           </figure>

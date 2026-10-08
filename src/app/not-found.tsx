@@ -1,27 +1,20 @@
-import Link from "next/link";
+import Logo from "@/components/Logo";
 
 export default function NotFound() {
   return (
-    <main className="grid min-h-screen place-items-center bg-bg px-6">
-      <div className="text-center">
-        <div className="mx-auto flex w-fit items-center gap-2 text-xl font-bold text-ink">
-          <span className="grid h-8 w-8 place-items-center rounded-md bg-grad text-sm font-extrabold text-white">
-            M
-          </span>
-          mobilnova
+    <main className="nf">
+      <div className="wrap">
+        <Logo />
+        <h1 style={{ marginTop: "3rem" }}>
+          <span>404</span>
+          <span className="acc">Nicht gefunden.</span>
+        </h1>
+        <p className="lead">Diese Seite gibt es nicht (mehr).</p>
+        <div className="acts" style={{ marginTop: "2rem" }}>
+          <a className="btn" href="/">
+            Zur Startseite
+          </a>
         </div>
-        <p className="mt-8 font-mono text-6xl font-extrabold text-accent">404</p>
-        <h1 className="mt-4 text-2xl font-bold text-ink">Seite nicht gefunden</h1>
-        <p className="mx-auto mt-3 max-w-[42ch] text-muted">
-          Diese Seite gibt es nicht (mehr). Vielleicht hilft dir der Weg zurück zur Startseite
-          weiter.
-        </p>
-        <Link
-          href="/"
-          className="mt-8 inline-flex items-center gap-2 rounded-xl bg-grad px-6 py-3 font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
-        >
-          ← Zur Startseite
-        </Link>
       </div>
     </main>
   );

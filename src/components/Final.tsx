@@ -12,8 +12,8 @@ export default function Final() {
         </p>
         <Cta stelle="schluss" />
         <p className="note" style={{ marginTop: "1rem" }}>
-          Du gibst nur deine E-Mail-Adresse an. Wir schreiben dir persönlich, bis dahin passiert nichts. Den Preis
-          nennen wir im Gespräch.
+          Du gibst nur deine E-Mail-Adresse an. Wir schreiben dir persönlich, bis dahin passiert nichts. Der Pilot
+          kostet 99 € pro Monat, drei Monate lang.
         </p>
       </div>
     </section>

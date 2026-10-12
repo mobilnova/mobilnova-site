@@ -4,7 +4,11 @@ import Section from "@/components/Section";
 const ABLAUF: [string, string][] = [
   [
     "Gespräch",
-    "Wir schreiben dich persönlich an und finden einen Termin. Im Gespräch klären wir, ob der Assistent zu deinem Betrieb passt, und besprechen Preis und Bedingungen.",
+    "Wir schreiben dich persönlich an und finden einen Termin. Im Gespräch klären wir, ob der Assistent zu deinem Betrieb passt, und besprechen die Bedingungen.",
+  ],
+  [
+    "Preis",
+    "Der Pilot dauert drei Monate und kostet 99 € pro Monat. Danach ist ein Preis von 149 € pro Monat geplant, das ist noch kein Angebot.",
   ],
   [
     "Einrichtung",

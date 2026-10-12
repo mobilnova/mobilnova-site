@@ -11,7 +11,7 @@ const FAQ: [string, string][] = [
   ],
   [
     "Was passiert, wenn ich auf „Pilotgespräch anfragen“ klicke?",
-    "Du kommst auf ein kurzes Formular. Pflicht ist nur deine E-Mail-Adresse, Betrieb und Schwerpunkt sind freiwillig. Danach schreiben wir dir persönlich, um einen Termin zu finden. Bis dahin passiert nichts, und die Anfrage verpflichtet dich zu nichts. Die Warteliste ist die leichtere Variante: kostenlos und unverbindlich, du bekommst nur eine Nachricht, wenn der Pilot startet und wenn Autopilot verfügbar ist.",
+    "Du kommst auf ein kurzes Formular. Pflicht ist nur deine E-Mail-Adresse, Betrieb und Schwerpunkt sind freiwillig. Danach schreiben wir dir persönlich, um einen Termin zu finden. Bis dahin passiert nichts, und die Anfrage verpflichtet dich zu nichts, auch nicht zum Pilotpreis. Die Warteliste ist die leichtere Variante: kostenlos und unverbindlich, du bekommst nur eine Nachricht, wenn der Pilot startet und wenn Autopilot verfügbar ist.",
   ],
   [
     "Ich nutze schon eine Software. Muss ich wechseln?",
@@ -23,7 +23,7 @@ const FAQ: [string, string][] = [
   ],
   [
     "Was kostet es?",
-    "Preis und Bedingungen besprechen wir im Pilotgespräch, bevor du irgendetwas zusagst. Diese Seite ist eine Information und kein Vertragsangebot. Es gibt fünf Pilotplätze.",
+    "Der Pilot dauert drei Monate und kostet 99 € pro Monat. Danach ist ein Preis von 149 € pro Monat geplant; das ist ein geplanter Preis und noch kein Angebot. Weitere Bedingungen besprechen wir im Pilotgespräch, bevor du irgendetwas zusagst. Es gibt fünf Pilotplätze, und diese Seite ist eine Information, kein Vertragsangebot.",
   ],
   [
     "Brauche ich technisches Wissen oder eigene Hardware?",
@@ -31,7 +31,7 @@ const FAQ: [string, string][] = [
   ],
   [
     "Was passiert mit meinen Daten, und gilt EU-Recht?",
-    "Deine Daten gehören dir und liegen in den Niederlanden, getrennt von den Daten anderer Betriebe. Für den Chat-Assistenten und das Auslesen von Belegen nutzen wir ein Sprachmodell von Anthropic: Dorthin gehen die jeweilige Frage samt Abfrageergebnis bzw. der Beleg, außerhalb der EU, vertraglich über Standardvertragsklauseln abgesichert. Wir arbeiten nach DSGVO; einen Auftragsverarbeitungsvertrag besprechen wir im Pilotgespräch. Für diese Website gilt die Datenschutzerklärung.",
+    "Deine Daten gehören dir und liegen in den Niederlanden, getrennt von den Daten anderer Betriebe. Für den Chat-Assistenten und das Auslesen von Belegen nutzen wir ein Sprachmodell von Anthropic: Dorthin gehen die jeweilige Frage samt Abfrageergebnis bzw. der Beleg, außerhalb der EU, vertraglich über Standardvertragsklauseln abgesichert. Wir arbeiten nach DSGVO; einen Auftragsverarbeitungsvertrag (AVV) bekommst du von uns. Für diese Website gilt die Datenschutzerklärung.",
   ],
   [
     "Ist das nur für Folierer?",

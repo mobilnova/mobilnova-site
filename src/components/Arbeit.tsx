@@ -9,11 +9,11 @@ const ZEILEN: Zeile[] = [
   },
   {
     titel: "Anfragen",
-    text: "Der Assistent arbeitet auf deiner bestehenden WhatsApp-Geschäftsnummer und mit deinen E-Mails. Er bereitet Antworten auf Standardfragen vor, fragt fehlende Fotos nach und schlägt Termine vor. Du kannst jederzeit übernehmen.",
+    text: "Der Assistent arbeitet auf deiner bestehenden WhatsApp-Geschäftsnummer und mit deinen E-Mails. Er bereitet Antworten auf Standardfragen vor, fragt fehlende Fotos nach und schlägt Termine vor. Du kannst jederzeit übernehmen. Anfragen per Telefon oder Instagram trägst du von Hand in dieselbe Liste ein (Nachricht kopieren, einfügen); Instagram direkt anzubinden ist noch nicht gebaut.",
   },
   {
     titel: "Termin und Rechnung",
-    text: "Nach deiner Freigabe gehen Terminbestätigung und Erinnerung raus. Nach dem Auftrag liegt die Rechnung fertig da, auf Wunsch als E-Rechnung (XRechnung und ZUGFeRD).",
+    text: "Nach deiner Freigabe gehen Terminbestätigung und Erinnerung raus. Nach dem Auftrag liegt die Rechnung fertig da, auf Wunsch als E-Rechnung (XRechnung oder ZUGFeRD: das maschinenlesbare Format, das Geschäftskunden für Rechnungen verlangen können).",
   },
   {
     titel: "Freigabe",
@@ -21,21 +21,23 @@ const ZEILEN: Zeile[] = [
   },
 ];
 
-const FUNDAMENT = [
-  "Kunden und Fahrzeuge",
-  "Digitale Annahme mit Fotos und Unterschrift",
-  "Schäden am Fahrzeugschema",
-  "Lackdickenmessung",
-  "Angebote und Aufträge",
-  "Rechnungen und E-Rechnung",
-  "Kartenzahlung per Link",
-  "Mahnwesen",
-  "Kalender und Stellplätze",
-  "Online-Terminanfragen",
-  "Mitarbeiter und Zeiten",
-  "Material und Lager",
-  "Nachpflege-Erinnerung",
-  "Berichte",
+const FUNDAMENT: [string, string][] = [
+  ["Kunden und Fahrzeuge", "Kennzeichen, FIN, Farbe und Kilometerstand hängen am Fahrzeug."],
+  ["Digitale Annahme", "Zustand, Fotos und Unterschrift am Tablet."],
+  ["Schäden am Fahrzeugschema", "Schäden auf dem Fahrzeugumriss markieren."],
+  ["Lackdickenmessung", "Messwerte je Bauteil bei der Annahme festhalten."],
+  ["Angebote und Aufträge", "Vom Angebot über „in Arbeit“ bis „fertig“."],
+  ["Rechnungen und E-Rechnung", "PDF und E-Rechnung, Anzahlung, Schlussrechnung und Sammelrechnung."],
+  ["Kartenzahlung per Link", ""],
+  ["Mahnwesen", "Erinnerung, 1. und 2. Mahnung."],
+  ["Kalender und Belegungsplan", "Termine und Hallenplätze je Tag."],
+  ["Online-Terminanfragen", ""],
+  ["Mitarbeiter und Zeiten", ""],
+  ["Material und Lager", "Mit Folienregal und Rollenrest."],
+  ["Nachpflege-Erinnerung", "Erinnerung an fällige Nachpflege."],
+  ["Datenübernahme", "Kunden und Fahrzeuge als Liste (CSV, zum Beispiel aus Excel) übernehmen."],
+  ["DATEV-Export", "Rechnungen als CSV für den Steuerberater."],
+  ["Berichte", ""],
 ];
 
 const BILDER = [
@@ -89,8 +91,11 @@ export default function Arbeit() {
       <div className="found">
         <p className="mono faint">Das Fundament, auf dem der Assistent aufsetzt</p>
         <ul>
-          {FUNDAMENT.map((f) => (
-            <li key={f}>{f}</li>
+          {FUNDAMENT.map(([name, text]) => (
+            <li key={name}>
+              <strong>{name}</strong>
+              {text ? <span> {text}</span> : null}
+            </li>
           ))}
         </ul>
       </div>

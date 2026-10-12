@@ -11,6 +11,7 @@ export default function Header() {
           <a href="#arbeit">So arbeitet es</a>
           <a href="#grundsaetze">Grundsätze</a>
           <a href="#pilot">Pilot</a>
+          <a href="#wer">Wer dahintersteht</a>
           <a href="#fragen">Fragen</a>
         </nav>
         <a className="login mono" href={APP_LOGIN}>

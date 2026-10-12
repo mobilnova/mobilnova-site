@@ -28,6 +28,10 @@ export default function Abend() {
           </div>
         ))}
       </dl>
+      <p className="note">
+        Was der Assistent auf dem Foto zu erkennen glaubt, siehst du in der Freigabe, bevor etwas rausgeht. Die Preise
+        rechnet die Software aus deiner Preisliste, nicht das Sprachmodell.
+      </p>
     </Section>
   );
 }

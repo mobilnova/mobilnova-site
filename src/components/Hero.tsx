@@ -17,8 +17,14 @@ export default function Hero() {
               bereitet Angebote vor, schlägt Termine vor und schreibt Rechnungen. Du siehst, was er
               vorschlägt, und gibst frei.
             </p>
+            <p className="note" style={{ marginTop: "1rem" }}>
+              „Autopilot“ heißt hier: Der Assistent erledigt die Vorarbeit, du entscheidest. Nichts geht ohne deine
+              Freigabe raus, außer du schaltest die Automatik selbst ein.
+            </p>
             <Cta stelle="hero" />
-            <p className="status mono faint">Pilotphase · fünf Pilotplätze · kein Vertragsangebot</p>
+            <p className="status mono faint">
+              Pilotphase · fünf Pilotplätze · Preis im Pilotgespräch · kein Vertragsangebot
+            </p>
           </div>
 
           <figure className="shot">

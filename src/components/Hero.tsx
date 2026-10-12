@@ -23,7 +23,7 @@ export default function Hero() {
             </p>
             <Cta stelle="hero" />
             <p className="status mono faint">
-              Pilotphase · fünf Pilotplätze · 99 € pro Monat für 3 Monate, zzgl. USt. · kein Vertragsangebot
+              Pilotphase · fünf Pilotplätze · 99 € für 2 Monate, zzgl. USt. · kein Vertragsangebot
             </p>
           </div>
 

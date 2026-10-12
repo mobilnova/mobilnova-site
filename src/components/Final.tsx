@@ -13,7 +13,7 @@ export default function Final() {
         <Cta stelle="schluss" />
         <p className="note" style={{ marginTop: "1rem" }}>
           Du gibst nur deine E-Mail-Adresse an. Wir schreiben dir persönlich, bis dahin passiert nichts. Der Pilot
-          kostet 99 € pro Monat zzgl. USt., drei Monate lang.
+          dauert zwei Monate und kostet einmalig 99 € zzgl. USt.
         </p>
       </div>
     </section>

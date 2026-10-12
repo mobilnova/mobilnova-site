@@ -23,7 +23,7 @@ const FAQ: [string, string][] = [
   ],
   [
     "Was kostet es?",
-    "Der Pilot dauert drei Monate und kostet 99 € pro Monat. Danach ist ein Preis von 149 € pro Monat geplant; das ist ein geplanter Preis und noch kein Angebot. Alle Preise verstehen sich zuzüglich gesetzlicher Umsatzsteuer. Weitere Bedingungen besprechen wir im Pilotgespräch, bevor du irgendetwas zusagst. Es gibt fünf Pilotplätze, und diese Seite ist eine Information, kein Vertragsangebot.",
+    "Der Pilot dauert zwei Monate und kostet einmalig 99 €. Danach ist ein Preis von 149 € pro Monat geplant; das ist ein geplanter Preis und noch kein Angebot. Alle Preise verstehen sich zuzüglich gesetzlicher Umsatzsteuer. Weitere Bedingungen besprechen wir im Pilotgespräch, bevor du irgendetwas zusagst. Es gibt fünf Pilotplätze, und diese Seite ist eine Information, kein Vertragsangebot.",
   ],
   [
     "Brauche ich technisches Wissen oder eigene Hardware?",

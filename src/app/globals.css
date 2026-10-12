@@ -146,6 +146,8 @@ h2 .acc { color: var(--neon); }
 /* Fundament */
 .found { margin-top: 3rem; }
 .found ul { margin-top: 1rem; columns: 1; column-gap: 2.5rem; border-top: 1px solid var(--line-2); }
+.found li strong { color: var(--ink); font-weight: 700; }
+.found li span { color: var(--faint); }
 .found li { break-inside: avoid; padding: 0.55rem 0; border-bottom: 1px solid var(--line); color: #d4dbe0; font-size: 0.98rem; }
 
 /* Grundsätze */

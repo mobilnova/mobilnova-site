@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="hero" id="top">
       <div className="wrap">
-        <p className="mono mute">Für Folierer, PPF- und Aufbereitungsbetriebe</p>
+        <p className="mono mute">Für Folierer, PPF- und Aufbereitungsbetriebe in Deutschland</p>
         <h1 style={{ marginTop: "1.4rem" }}>
           <span>Der Betrieb läuft.</span>
           <span className="acc">Du entscheidest.</span>
@@ -17,8 +17,14 @@ export default function Hero() {
               bereitet Angebote vor, schlägt Termine vor und schreibt Rechnungen. Du siehst, was er
               vorschlägt, und gibst frei.
             </p>
+            <p className="note" style={{ marginTop: "1rem" }}>
+              „Autopilot“ heißt hier: Der Assistent erledigt die Vorarbeit, du entscheidest. Nichts geht ohne deine
+              Freigabe raus, außer du schaltest die Automatik selbst ein.
+            </p>
             <Cta stelle="hero" />
-            <p className="status mono faint">Pilotphase · fünf Pilotplätze · kein Vertragsangebot</p>
+            <p className="status mono faint">
+              Pilotphase · fünf Pilotplätze · 99 € pro Monat für 3 Monate, zzgl. USt. · kein Vertragsangebot
+            </p>
           </div>
 
           <figure className="shot">

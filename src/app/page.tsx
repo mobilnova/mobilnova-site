@@ -5,7 +5,7 @@ import Abend from "@/components/Abend";
 import Arbeit from "@/components/Arbeit";
 import Grundsaetze from "@/components/Grundsaetze";
 import Pilot from "@/components/Pilot";
-import Investoren from "@/components/Investoren";
+import Gruender from "@/components/Gruender";
 import Faq from "@/components/Faq";
 import Final from "@/components/Final";
 import Footer from "@/components/Footer";
@@ -24,7 +24,7 @@ export default function Home() {
         <Arbeit />
         <Grundsaetze />
         <Pilot />
-        <Investoren />
+        <Gruender />
         <Faq />
         <Final />
       </main>

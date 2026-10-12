@@ -1,5 +1,5 @@
 import Logo from "@/components/Logo";
-import { APP_LOGIN, KONTAKT_MAIL } from "@/lib/links";
+import { APP_LOGIN, KONTAKT_MAIL, KONTAKT_NAME, KONTAKT_TELEFON, KONTAKT_TELEFON_LINK } from "@/lib/links";
 
 export default function Footer() {
   return (
@@ -15,6 +15,10 @@ export default function Footer() {
           <div>
             <p className="mono faint">Kontakt</p>
             <ul>
+              <li>{KONTAKT_NAME}</li>
+              <li>
+                <a href={KONTAKT_TELEFON_LINK}>{KONTAKT_TELEFON}</a>
+              </li>
               <li>
                 <a href={`mailto:${KONTAKT_MAIL}`}>{KONTAKT_MAIL}</a>
               </li>

@@ -8,7 +8,7 @@ const ABLAUF: [string, string][] = [
   ],
   [
     "Preis",
-    "Der Pilot dauert drei Monate und kostet 99 € pro Monat. Danach ist ein Preis von 149 € pro Monat geplant, das ist noch kein Angebot.",
+    "Der Pilot dauert drei Monate und kostet 99 € pro Monat. Danach ist ein Preis von 149 € pro Monat geplant, das ist noch kein Angebot. Alle Preise zuzüglich gesetzlicher Umsatzsteuer.",
   ],
   [
     "Einrichtung",

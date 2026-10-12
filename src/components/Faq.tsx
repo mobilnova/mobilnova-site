@@ -23,7 +23,7 @@ const FAQ: [string, string][] = [
   ],
   [
     "Was kostet es?",
-    "Der Pilot dauert drei Monate und kostet 99 € pro Monat. Danach ist ein Preis von 149 € pro Monat geplant; das ist ein geplanter Preis und noch kein Angebot. Weitere Bedingungen besprechen wir im Pilotgespräch, bevor du irgendetwas zusagst. Es gibt fünf Pilotplätze, und diese Seite ist eine Information, kein Vertragsangebot.",
+    "Der Pilot dauert drei Monate und kostet 99 € pro Monat. Danach ist ein Preis von 149 € pro Monat geplant; das ist ein geplanter Preis und noch kein Angebot. Alle Preise verstehen sich zuzüglich gesetzlicher Umsatzsteuer. Weitere Bedingungen besprechen wir im Pilotgespräch, bevor du irgendetwas zusagst. Es gibt fünf Pilotplätze, und diese Seite ist eine Information, kein Vertragsangebot.",
   ],
   [
     "Brauche ich technisches Wissen oder eigene Hardware?",
@@ -32,6 +32,10 @@ const FAQ: [string, string][] = [
   [
     "Was passiert mit meinen Daten, und gilt EU-Recht?",
     "Deine Daten gehören dir und liegen in den Niederlanden, getrennt von den Daten anderer Betriebe. Für den Chat-Assistenten und das Auslesen von Belegen nutzen wir ein Sprachmodell von Anthropic: Dorthin gehen die jeweilige Frage samt Abfrageergebnis bzw. der Beleg, außerhalb der EU, vertraglich über Standardvertragsklauseln abgesichert. Wir arbeiten nach DSGVO; einen Auftragsverarbeitungsvertrag (AVV) bekommst du von uns. Für diese Website gilt die Datenschutzerklärung.",
+  ],
+  [
+    "Gilt das auch in Österreich und der Schweiz?",
+    "Wir starten zunächst nur in Deutschland: mit Euro, deutschem Steuerrecht und deutscher E-Rechnung. Österreich und die Schweiz sind noch nicht dran. Wenn dein Betrieb dort sitzt, schreib uns trotzdem.",
   ],
   [
     "Ist das nur für Folierer?",

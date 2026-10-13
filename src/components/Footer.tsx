@@ -28,6 +28,20 @@ export default function Footer() {
             </ul>
           </div>
           <div>
+            <p className="mono faint">Mehr</p>
+            <ul>
+              <li>
+                <a href="/folierer/">Software für Folierer</a>
+              </li>
+              <li>
+                <a href="/aufbereiter/">Software für Aufbereiter</a>
+              </li>
+              <li>
+                <a href="/ratgeber/">Ratgeber</a>
+              </li>
+            </ul>
+          </div>
+          <div>
             <p className="mono faint">Rechtliches</p>
             <ul>
               <li>

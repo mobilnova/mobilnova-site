@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://mobilnova.de/sitemap.xml
+
 # Rechtliche Seiten aus dem Index halten (nicht relevant für Suchmaschinen)
 Disallow: /impressum.html
 Disallow: /datenschutz.html

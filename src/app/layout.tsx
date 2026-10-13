@@ -2,27 +2,28 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import "./globals.css";
 
-const TITEL = "mobilnova. Der Betrieb läuft. Du entscheidest.";
+const TITEL = "mobilnova: Software für Folierer und Aufbereiter";
 const BESCHREIBUNG =
-  "Der digitale Assistent für deinen Betrieb: Anfragen, Angebote, Termine, Rechnungen. Du gibst frei. " +
-  "Für Folierer und Aufbereiter in Deutschland. Pilotphase, fünf Plätze.";
+  "Betriebssoftware mit Assistent für Folierer, PPF- und Aufbereitungsbetriebe in Deutschland: " +
+  "Anfragen, Angebote, Termine, Rechnungen. Du gibst frei. Pilotphase.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mobilnova.de"),
-  title: TITEL,
+  title: { default: TITEL, template: "%s | mobilnova" },
   description: BESCHREIBUNG,
   applicationName: "mobilnova",
   authors: [{ name: "mobilnova" }],
   openGraph: {
     type: "website",
     locale: "de_DE",
-    url: "https://mobilnova.de",
+    url: "/",
     siteName: "mobilnova",
     title: TITEL,
     description: BESCHREIBUNG,
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "mobilnova" }],
   },
-  alternates: { canonical: "https://mobilnova.de" },
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
 };
 
 export const viewport: Viewport = {

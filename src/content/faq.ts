@@ -6,7 +6,7 @@ export const FAQ: [string, string][] = [
   ],
   [
     "Was, wenn der Assistent etwas falsch einschätzt?",
-    "Dann siehst du es in der Freigabe, bevor etwas rausgeht: Jeder Vorschlag nennt seine Begründung, und du kannst ihn ändern oder ablehnen. Preise, Beträge, Steuern und Fristen rechnet die Software nach festen Regeln, nie das Sprachmodell. Ein Foto kann der Assistent nur einschätzen, nicht vermessen: Bei einem Lackschaden entscheidest du.",
+    "Dann siehst du es in der Freigabe, bevor etwas rausgeht: Jeder Vorschlag nennt seine Begründung, und du kannst ihn ändern oder ablehnen. Preise, Beträge, Steuern und Fristen rechnet die Software nach festen Regeln, nie das Sprachmodell. Ein Foto kann der Assistent nur einschätzen, nicht vermessen: Bei Schäden, Flächen und Maßen entscheidest du.",
   ],
   [
     "Was passiert, wenn ich auf „Pilotgespräch anfragen“ klicke?",
@@ -37,7 +37,11 @@ export const FAQ: [string, string][] = [
     "Wir starten zunächst nur in Deutschland: mit Euro, deutschem Steuerrecht und deutscher E-Rechnung. Österreich und die Schweiz sind noch nicht dran. Wenn dein Betrieb dort sitzt, schreib uns trotzdem.",
   ],
   [
-    "Ist das nur für Folierer?",
-    "Wir starten bei Folierern, PPF- und Aufbereitungsbetrieben, weil wir dort selbst arbeiten. Läuft dein Betrieb anders, sprich mit uns: Im Pilotgespräch klären wir, ob es passt.",
+    "Für welche Betriebe ist mobilnova?",
+    "Für Dienstleistungsbetriebe, bei denen der Ablauf gleich ist: Anfrage, Angebot, Termin, Arbeit beim Kunden, Rechnung. Im Pilot sind das heute Betriebe aus Fahrzeugaufbereitung und Folierung (mit PPF und Lackschutz), weil wir dort selbst arbeiten. Fensterreinigung und Gebäudereinigung sind in Vorbereitung, aber noch nicht im Pilot. Ist dein Gewerk nicht dabei oder läuft dein Betrieb anders, sprich mit uns: Im Pilotgespräch klären wir offen, was heute geht und was nicht.",
+  ],
+  [
+    "Was ist ein Branchenpaket?",
+    "Der Ablauf von der Anfrage bis zur Rechnung ist für alle Gewerke gleich. Was sich unterscheidet, steht im Branchenpaket des Gewerks: Leistungen und Preiseinheiten, Angaben zum Objekt, Textvorlagen und Terminregeln. Die Preise legst du selbst fest.",
   ],
 ];

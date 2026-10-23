@@ -18,7 +18,7 @@ const REGELN: [string, string][] = [
 
 export default function Grundsaetze() {
   return (
-    <Section id="grundsaetze" no="05" label="Grundsätze">
+    <Section id="grundsaetze" no="06" label="Grundsätze">
       <h2>Vier Regeln, an denen du uns messen kannst.</h2>
       <p className="mission-line">Wir nehmen Betriebsinhabern die Büroarbeit ab, ohne ihnen die Kontrolle zu nehmen.</p>
       <ol className="rules">

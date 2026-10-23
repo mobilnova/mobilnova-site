@@ -5,7 +5,7 @@ import { absolut } from "@/lib/seo";
 // Statischer Export: die Sitemap wird beim Build als /sitemap.xml geschrieben.
 export const dynamic = "force-static";
 
-const STARTSEITE_GEAENDERT = "2026-10-13";
+const STARTSEITE_GEAENDERT = "2026-10-23";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

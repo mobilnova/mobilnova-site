@@ -3,11 +3,11 @@ import Section from "@/components/Section";
 const ABLAUF: [string, string][] = [
   [
     "20:30",
-    "Zwei Anfragen kommen rein. Per E-Mail fragt ein Kunde nach einem Termin. Per WhatsApp schickt ein anderer ein Foto von einem Lackschaden und fragt, ob sich das reparieren lässt.",
+    "Zwei Anfragen kommen rein. Per E-Mail fragt ein Kunde nach einem Termin. Per WhatsApp schickt ein anderer Fotos von dem, was gemacht werden soll, und fragt nach dem Preis.",
   ],
   [
     "20:31",
-    "Der Assistent liest beide Nachrichten und das Foto, schaut in deinen Kalender und deine Preisliste und bereitet alles vor: Terminvorschlag, Angebot für die Reparatur und zwei Antworten.",
+    "Der Assistent liest beide Nachrichten und die Fotos, schaut in deinen Kalender und deine Preisliste und bereitet alles vor: Terminvorschlag, Angebot und zwei Antworten.",
   ],
   ["07:30", "Du öffnest die Freigabe-Liste vor der Werkstatt, änderst bei Bedarf einen Preis und gibst frei."],
   ["07:31", "Angebot, Terminplanung und Antworten gehen raus."],
@@ -15,7 +15,7 @@ const ABLAUF: [string, string][] = [
 
 export default function Abend() {
   return (
-    <Section no="03" label="Der Abend im Büro">
+    <Section no="04" label="Der Abend im Büro">
       <h2>Anfrage um 20:30. Antwort am nächsten Morgen.</h2>
       <p>
         So soll ein Abend aussehen, wenn der Assistent mitläuft. Ein Beispiel, noch nicht im Pilot gemessen.
@@ -29,7 +29,7 @@ export default function Abend() {
         ))}
       </dl>
       <p className="note">
-        Was der Assistent auf dem Foto zu erkennen glaubt, siehst du in der Freigabe, bevor etwas rausgeht. Die Preise
+        Was der Assistent auf den Fotos zu erkennen glaubt, siehst du in der Freigabe, bevor etwas rausgeht. Die Preise
         rechnet die Software aus deiner Preisliste, nicht das Sprachmodell.
       </p>
     </Section>

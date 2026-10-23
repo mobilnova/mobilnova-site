@@ -3,12 +3,12 @@ import { KONTAKT_MAIL, KONTAKT_NAME, KONTAKT_TELEFON, KONTAKT_TELEFON_LINK } fro
 
 export default function Gruender() {
   return (
-    <Section id="wer" no="07" label="Wer dahintersteht">
+    <Section id="wer" no="08" label="Wer dahintersteht">
       <h2>Wer dahintersteht.</h2>
       <p>
         mobilnova entwickelt {KONTAKT_NAME}, der selbst einen Aufbereitungsbetrieb führt. Die Basis ist eine
-        Betriebsverwaltung für Folierer, PPF- und Aufbereitungsbetriebe; darauf setzt der Assistent auf. mobilnova ist
-        in der Pilotphase.
+        Betriebsverwaltung für Dienstleistungsbetriebe; darauf setzt der Assistent auf. Heute läuft sie für Folierer,
+        PPF- und Aufbereitungsbetriebe, weitere Gewerke folgen. mobilnova ist in der Pilotphase.
       </p>
       <p style={{ marginTop: "1rem" }}>
         Du erreichst uns direkt: <a href={KONTAKT_TELEFON_LINK}>{KONTAKT_TELEFON}</a> oder{" "}

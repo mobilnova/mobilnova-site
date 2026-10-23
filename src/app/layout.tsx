@@ -2,10 +2,10 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import "./globals.css";
 
-const TITEL = "mobilnova: Software für Folierer und Aufbereiter";
+const TITEL = "mobilnova: Betriebssoftware mit Assistent für Dienstleister";
 const BESCHREIBUNG =
-  "Betriebssoftware mit Assistent für Folierer, PPF- und Aufbereitungsbetriebe in Deutschland: " +
-  "Anfragen, Angebote, Termine, Rechnungen. Du gibst frei. Pilotphase.";
+  "Betriebssoftware mit Assistent für Dienstleister in Deutschland: Anfragen, Angebote, Termine, " +
+  "Rechnungen. Du gibst frei. Pilot in Fahrzeugpflege und Folierung.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mobilnova.de"),

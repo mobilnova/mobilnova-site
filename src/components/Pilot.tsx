@@ -23,7 +23,7 @@ const ABLAUF: [string, string][] = [
 
 export default function Pilot() {
   return (
-    <Section id="pilot" no="06" label="Pilot">
+    <Section id="pilot" no="07" label="Pilot">
       <h2>
         Sei einer von <span className="acc">fünf Pilotbetrieben.</span>
       </h2>

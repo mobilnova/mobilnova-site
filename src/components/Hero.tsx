@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="hero" id="top">
       <div className="wrap">
-        <p className="mono mute">Für Folierer, PPF- und Aufbereitungsbetriebe in Deutschland</p>
+        <p className="mono mute">Für Dienstleistungsbetriebe in Deutschland · Pilot in Fahrzeugpflege und Folierung</p>
         <h1 style={{ marginTop: "1.4rem" }}>
           <span>Der Betrieb läuft.</span>
           <span className="acc">Du entscheidest.</span>
@@ -13,9 +13,9 @@ export default function Hero() {
         <div className="hero-grid">
           <div>
             <p className="lead">
-              mobilnova Autopilot ist der digitale Assistent für deinen Betrieb. Er beantwortet Anfragen,
-              bereitet Angebote vor, schlägt Termine vor und schreibt Rechnungen. Du siehst, was er
-              vorschlägt, und gibst frei.
+              mobilnova Autopilot ist der digitale Assistent für deinen Servicebetrieb. Er beantwortet Anfragen,
+              bereitet Angebote vor, schlägt Termine vor und schreibt Rechnungen. Dein Team arbeitet beim Kunden.
+              Du siehst, was der Assistent vorschlägt, und gibst frei.
             </p>
             <p className="note" style={{ marginTop: "1rem" }}>
               „Autopilot“ heißt hier: Der Assistent erledigt die Vorarbeit, du entscheidest. Nichts geht ohne deine

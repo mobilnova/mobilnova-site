@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Warum from "@/components/Warum";
+import Branchen from "@/components/Branchen";
 import Abend from "@/components/Abend";
 import Arbeit from "@/components/Arbeit";
 import Grundsaetze from "@/components/Grundsaetze";
@@ -42,7 +43,7 @@ const STRUKTURIERT = [
     inLanguage: "de-DE",
     url: absolut("/"),
     description:
-      "Betriebssoftware mit digitalem Assistenten für Folierer, PPF- und Aufbereitungsbetriebe in Deutschland. Pilotphase.",
+      "Betriebssoftware mit digitalem Assistenten für Dienstleistungsbetriebe in Deutschland, heute im Pilot für Folierer, PPF- und Aufbereitungsbetriebe. Pilotphase.",
   },
   {
     "@context": "https://schema.org",
@@ -68,6 +69,7 @@ export default function Home() {
       <main id="inhalt">
         <Hero />
         <Warum />
+        <Branchen />
         <Abend />
         <Arbeit />
         <Grundsaetze />

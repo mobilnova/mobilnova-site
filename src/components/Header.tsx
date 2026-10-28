@@ -8,6 +8,7 @@ export default function Header() {
         <Logo />
         <nav className="nav mono" aria-label="Abschnitte">
           <a href="/#warum">Warum Autopilot</a>
+          <a href="/#branchen">Gewerke</a>
           <a href="/#arbeit">So arbeitet es</a>
           <a href="/#grundsaetze">Grundsätze</a>
           <a href="/#pilot">Pilot</a>

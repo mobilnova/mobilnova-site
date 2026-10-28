@@ -9,7 +9,8 @@ export default function Footer() {
           <div>
             <Logo />
             <p style={{ marginTop: "0.9rem", maxWidth: "26rem" }}>
-              Ein digitaler Assistent für Betriebe. Wir starten bei Folierern, PPF- und Aufbereitungsbetrieben.
+              Ein digitaler Assistent für Dienstleistungsbetriebe. Der Pilot läuft bei Folierern, PPF- und
+              Aufbereitungsbetrieben.
             </p>
           </div>
           <div>
@@ -30,6 +31,9 @@ export default function Footer() {
           <div>
             <p className="mono faint">Mehr</p>
             <ul>
+              <li>
+                <a href="/branchen/">Für welche Gewerke</a>
+              </li>
               <li>
                 <a href="/folierer/">Software für Folierer</a>
               </li>

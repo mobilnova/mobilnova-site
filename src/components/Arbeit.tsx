@@ -5,7 +5,7 @@ type Zeile = { titel: string; text: string };
 const ZEILEN: Zeile[] = [
   {
     titel: "Angebot aus Fotos",
-    text: "Dein Kunde schickt Fotos und sagt, was er will. Der Assistent bereitet das Angebot vor, mit Folienbedarf je Bauteil und Arbeitszeit. Die Preise kommen aus deiner Preisliste.",
+    text: "Dein Kunde schickt Fotos und sagt, was er will. Der Assistent bereitet das Angebot vor, mit den Leistungen und der Arbeitszeit. Die Preise kommen aus deiner Preisliste.",
   },
   {
     titel: "Anfragen",
@@ -22,22 +22,28 @@ const ZEILEN: Zeile[] = [
 ];
 
 const FUNDAMENT: [string, string][] = [
-  ["Kunden und Fahrzeuge", "Kennzeichen, FIN, Farbe und Kilometerstand hängen am Fahrzeug."],
-  ["Digitale Annahme", "Zustand, Fotos und Unterschrift am Tablet."],
-  ["Schäden am Fahrzeugschema", "Schäden auf dem Fahrzeugumriss markieren."],
-  ["Lackdickenmessung", "Messwerte je Bauteil bei der Annahme festhalten."],
+  ["Kunden und Kundenhistorie", "Alle Anfragen, Aufträge und Rechnungen eines Kunden an einer Stelle."],
   ["Angebote und Aufträge", "Vom Angebot über „in Arbeit“ bis „fertig“."],
   ["Rechnungen und E-Rechnung", "PDF und E-Rechnung, Anzahlung, Schlussrechnung und Sammelrechnung."],
   ["Kartenzahlung per Link", ""],
   ["Mahnwesen", "Erinnerung, 1. und 2. Mahnung."],
-  ["Kalender und Belegungsplan", "Termine und Hallenplätze je Tag."],
+  ["Kalender", "Termine je Tag, Woche und Monat."],
   ["Online-Terminanfragen", ""],
   ["Mitarbeiter und Zeiten", ""],
-  ["Material und Lager", "Mit Folienregal und Rollenrest."],
-  ["Nachpflege-Erinnerung", "Erinnerung an fällige Nachpflege."],
-  ["Datenübernahme", "Kunden und Fahrzeuge als Liste (CSV, zum Beispiel aus Excel) übernehmen."],
+  ["Datenübernahme", "Kunden als Liste (CSV, zum Beispiel aus Excel) übernehmen."],
   ["DATEV-Export", "Rechnungen als CSV für den Steuerberater."],
   ["Berichte", ""],
+];
+
+// Heute nur für Fahrzeugbetriebe gebaut; weitere Gewerke bekommen ein eigenes Branchenpaket.
+const FAHRZEUG: [string, string][] = [
+  ["Kunden und Fahrzeuge", "Kennzeichen, FIN, Farbe und Kilometerstand hängen am Fahrzeug."],
+  ["Digitale Annahme", "Zustand, Fotos und Unterschrift am Tablet."],
+  ["Schäden am Fahrzeugschema", "Schäden auf dem Fahrzeugumriss markieren."],
+  ["Lackdickenmessung", "Messwerte je Bauteil bei der Annahme festhalten."],
+  ["Belegungsplan", "Hallenplätze je Tag."],
+  ["Material und Lager", "Mit Folienregal und Rollenrest."],
+  ["Nachpflege-Erinnerung", "Erinnerung an fällige Nachpflege."],
 ];
 
 const BILDER = [
@@ -59,7 +65,7 @@ const BILDER = [
 
 export default function Arbeit() {
   return (
-    <Section id="arbeit" no="04" label="So arbeitet mobilnova">
+    <Section id="arbeit" no="05" label="So arbeitet mobilnova">
       <h2>Vier Dinge, die der Assistent dir abnimmt.</h2>
       <dl className="rows">
         {ZEILEN.map((z) => (
@@ -98,6 +104,22 @@ export default function Arbeit() {
             </li>
           ))}
         </ul>
+      </div>
+
+      <div className="found">
+        <p className="mono faint">Zusätzlich für Fahrzeugbetriebe</p>
+        <ul>
+          {FAHRZEUG.map(([name, text]) => (
+            <li key={name}>
+              <strong>{name}</strong>
+              {text ? <span> {text}</span> : null}
+            </li>
+          ))}
+        </ul>
+        <p className="note" style={{ marginTop: "1rem" }}>
+          Diese Bausteine gibt es heute für Fahrzeugbetriebe. Für weitere Gewerke bekommt jedes ein eigenes
+          Branchenpaket, der Ablauf bleibt gleich.
+        </p>
       </div>
     </Section>
   );

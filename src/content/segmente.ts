@@ -1,4 +1,5 @@
 import type { Inhalt } from "@/content/typen";
+import { KONTAKT_MAIL } from "@/lib/links";
 
 const PREIS =
   "Der Pilot dauert zwei Monate und kostet einmalig 99 €. Danach ist ein Preis von 149 € pro Monat geplant; das ist noch kein Angebot. Alle Preise zuzüglich gesetzlicher Umsatzsteuer. Es gibt fünf Pilotplätze.";
@@ -12,7 +13,7 @@ export const FOLIERER: Inhalt = {
   beschreibung:
     "Betriebssoftware für Folierer und PPF-Betriebe in Deutschland: Angebot nach Bauteilen, Folienlager mit Rollenrest, Annahme am Tablet, E-Rechnung. Pilotphase.",
   kurz: "Angebot nach Bauteilen, Folienlager, Annahme und Rechnung in einer Software.",
-  stand: "2026-10-13",
+  stand: "2026-10-23",
   bloecke: [
     {
       h2: "Angebot nach Bauteilen kalkulieren",
@@ -73,6 +74,7 @@ export const FOLIERER: Inhalt = {
     "/ratgeber/folienrollen-verwalten/",
     "/ratgeber/e-rechnung-folierer-aufbereiter/",
     "/aufbereiter/",
+    "/branchen/",
   ],
 };
 
@@ -85,7 +87,7 @@ export const AUFBEREITER: Inhalt = {
   beschreibung:
     "Betriebssoftware für Autoaufbereiter und Detailing-Betriebe in Deutschland: Zustandsprotokoll am Tablet, Angebote, Termine, E-Rechnung. Pilotphase, fünf Plätze.",
   kurz: "Zustandsprotokoll, Angebot, Termin und Rechnung für Aufbereitungsbetriebe.",
-  stand: "2026-10-13",
+  stand: "2026-10-23",
   bloecke: [
     {
       h2: "Fahrzeugannahme mit Zustandsprotokoll",
@@ -133,5 +135,65 @@ export const AUFBEREITER: Inhalt = {
     "/ratgeber/fahrzeugannahme-dokumentieren/",
     "/ratgeber/e-rechnung-folierer-aufbereiter/",
     "/folierer/",
+    "/branchen/",
   ],
+};
+
+export const BRANCHEN: Inhalt = {
+  pfad: "/branchen/",
+  titel: "Software für Dienstleister: für welche Gewerke",
+  h1: "Ein Ablauf für viele Gewerke.",
+  lead:
+    "mobilnova bildet den Ablauf eines Dienstleistungsbetriebs einmal ab: Anfrage, Angebot, Termin, Arbeit beim Kunden, Rechnung. Was sich von Gewerk zu Gewerk unterscheidet, steht in einem Branchenpaket. Hier steht, wo wir heute stehen.",
+  beschreibung:
+    "Betriebssoftware für Dienstleister: ein Ablauf von der Anfrage bis zur Rechnung, ein Branchenpaket je Gewerk. Pilot in Fahrzeugpflege und Folierung.",
+  kurz: "Ein Ablauf, ein Branchenpaket je Gewerk, und wo wir heute stehen.",
+  stand: "2026-10-23",
+  bloecke: [
+    {
+      h2: "Der Ablauf ist überall derselbe",
+      p: [
+        "Ob Fahrzeug, Fenster oder Folie: Der Weg durch das Büro sieht bei Dienstleistern fast immer gleich aus. Der Assistent bereitet die Schritte vor, du gibst frei.",
+      ],
+      liste: [
+        "Anfrage per WhatsApp, E-Mail oder Formular",
+        "Angebot aus deiner Preisliste",
+        "Termin im Kalender",
+        "Arbeit beim Kunden, mit Fotos",
+        "Übergabe",
+        "Rechnung und Zahlung",
+      ],
+    },
+    {
+      h2: "Was je Gewerk anders ist",
+      p: [
+        "Das steht im Branchenpaket: die Leistungen und ihre Preiseinheiten (je Stück, Bauteil, Stunde oder Fläche), die Angaben zum Objekt (bei einem Fahrzeug etwa Kennzeichen und Größe, bei einem Gebäude Adresse und Fläche), die Textvorlagen und die Regeln für Termine. Die Preise legst du selbst fest.",
+      ],
+    },
+    {
+      h2: "Wo wir heute stehen",
+      p: [
+        "Im Pilot laufen Betriebe aus der Fahrzeugaufbereitung und aus der Folierung mit PPF und Lackschutz. Die Bausteine dafür stehen auf den Seiten für Folierer und für Aufbereiter.",
+        "In Vorbereitung ist das Paket für Fensterreinigung und Gebäudereinigung. Geplant sind Preise nach Fläche oder Einsatz und wiederkehrende Einsätze. Es ist noch nicht im Pilot und noch nicht nutzbar.",
+        "Weitere Gewerke mit demselben Ablauf sind denkbar, etwa Garten- und Landschaftsbau. Zugesagt ist davon nichts.",
+      ],
+    },
+    {
+      h2: "Dein Gewerk ist nicht dabei?",
+      p: [
+        `Schreib uns kurz, wie bei dir der Weg von der Anfrage bis zur Rechnung aussieht, an ${KONTAKT_MAIL}. Passt der Ablauf, ist dein Gewerk ein Kandidat für ein weiteres Branchenpaket. Im Pilotgespräch klären wir offen, was heute geht und was nicht.`,
+      ],
+    },
+  ],
+  faq: [
+    [
+      "Läuft mobilnova schon für Reinigungsbetriebe?",
+      "Noch nicht. Der Pilot läuft mit Betrieben aus Fahrzeugaufbereitung und Folierung. Das Paket für Fensterreinigung und Gebäudereinigung ist in Vorbereitung. Schreib uns, wenn du es testen möchtest.",
+    ],
+    [
+      "Was ist ein Branchenpaket?",
+      "Ein Satz Angaben für ein Gewerk: Leistungen und Preiseinheiten, Angaben zum Objekt, Textvorlagen und Terminregeln. Der Ablauf von der Anfrage bis zur Rechnung bleibt für alle Gewerke gleich.",
+    ],
+  ],
+  weiter: ["/folierer/", "/aufbereiter/", "/ratgeber/"],
 };

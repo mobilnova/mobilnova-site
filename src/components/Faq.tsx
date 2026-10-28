@@ -3,7 +3,7 @@ import { FAQ } from "@/content/faq";
 
 export default function Faq() {
   return (
-    <Section id="fragen" no="08" label="Fragen">
+    <Section id="fragen" no="09" label="Fragen">
       <h2>Kurz beantwortet.</h2>
       <div className="faq">
         {FAQ.map(([q, a]) => (

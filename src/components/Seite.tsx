@@ -140,8 +140,11 @@ export default function Seite({ inhalt, children }: { inhalt: Inhalt; children?:
 
             <div className="seitencta">
               <h2>Sprich mit uns, bevor du entscheidest.</h2>
-              <p>Fünf Pilotplätze. Im Pilotgespräch klären wir, ob der Assistent zu deinem Betrieb passt.</p>
-              <Cta stelle={`seite${inhalt.pfad.replace(/\/$/, "").replace(/\//g, "-")}`} />
+              <p>
+                Fünf Pilotplätze für Aufbereiter und Folierer. Im Pilotgespräch klären wir, ob der Assistent zu deinem
+                Betrieb passt.
+              </p>
+              <Cta />
               <p className="note" style={{ marginTop: "1rem" }}>
                 Der Pilot dauert zwei Monate und kostet einmalig 99 € zzgl. USt. Informationsseite, kein Vertragsangebot.
               </p>

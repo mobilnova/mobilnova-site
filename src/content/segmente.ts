@@ -2,7 +2,7 @@ import type { Inhalt } from "@/content/typen";
 import { KONTAKT_MAIL } from "@/lib/links";
 
 const PREIS =
-  "Der Pilot dauert zwei Monate und kostet einmalig 99 €. Danach ist ein Preis von 149 € pro Monat geplant; das ist noch kein Angebot. Alle Preise zuzüglich gesetzlicher Umsatzsteuer. Es gibt fünf Pilotplätze.";
+  "Der Pilot dauert zwei Monate und kostet einmalig 99 €. Danach ist ein Preis von 149 € pro Monat geplant; das ist noch kein Angebot. Alle Preise zuzüglich gesetzlicher Umsatzsteuer. Es gibt fünf Pilotplätze für Aufbereiter und Folierer.";
 
 export const FOLIERER: Inhalt = {
   pfad: "/folierer/",
@@ -188,7 +188,7 @@ export const BRANCHEN: Inhalt = {
   faq: [
     [
       "Läuft mobilnova schon für Reinigungsbetriebe?",
-      "Noch nicht. Der Pilot läuft mit Betrieben aus Fahrzeugaufbereitung und Folierung. Das Paket für Fensterreinigung und Gebäudereinigung ist in Vorbereitung. Schreib uns, wenn du es testen möchtest.",
+      "Noch nicht. Der Pilot läuft mit Betrieben aus Fahrzeugaufbereitung und Folierung. Das Paket für Fensterreinigung und Gebäudereinigung ist in Vorbereitung. Pilotplätze gibt es dort noch nicht. Schreib uns, wenn dich das Paket interessiert.",
     ],
     [
       "Was ist ein Branchenpaket?",

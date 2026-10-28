@@ -8,12 +8,13 @@ export default function Final() {
           Sprich mit uns, <span className="acc">bevor du entscheidest.</span>
         </h2>
         <p style={{ marginTop: "1.4rem", maxWidth: "34rem", color: "#d4dbe0" }}>
-          Fünf Pilotplätze. Im Pilotgespräch klären wir, ob der Assistent zu deinem Betrieb passt.
+          Fünf Pilotplätze für Aufbereiter und Folierer. Im Pilotgespräch klären wir, ob der Assistent zu deinem Betrieb
+          passt.
         </p>
-        <Cta stelle="schluss" />
+        <Cta />
         <p className="note" style={{ marginTop: "1rem" }}>
-          Du gibst nur deine E-Mail-Adresse an. Wir schreiben dir persönlich, bis dahin passiert nichts. Der Pilot
-          dauert zwei Monate und kostet einmalig 99 € zzgl. USt.
+          Du schreibst uns eine E-Mail, wir antworten dir persönlich, bis dahin passiert nichts. Der Pilot dauert zwei
+          Monate und kostet einmalig 99 € zzgl. USt.
         </p>
       </div>
     </section>

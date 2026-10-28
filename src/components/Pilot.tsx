@@ -28,8 +28,9 @@ export default function Pilot() {
         Sei einer von <span className="acc">fünf Pilotbetrieben.</span>
       </h2>
       <p>
-        Wir suchen fünf Betriebe, die den Autopiloten mit uns im Alltag testen. Im Pilotgespräch klären wir, ob der
-        Assistent zu deinem Betrieb passt.
+        Wir suchen fünf Betriebe aus Fahrzeugaufbereitung und Folierung, die den Autopiloten mit uns im Alltag testen.
+        Im Pilotgespräch klären wir, ob der Assistent zu deinem Betrieb passt. Für andere Gewerke gibt es vorerst
+        keine Pilotplätze.
       </p>
       <dl className="rows">
         {ABLAUF.map(([titel, text]) => (
@@ -41,11 +42,10 @@ export default function Pilot() {
           </div>
         ))}
       </dl>
-      <Cta stelle="mitte" />
+      <Cta />
       <p className="note" style={{ marginTop: "1rem" }}>
-        Pilotgespräch: Du gibst deine E-Mail-Adresse an (Betrieb und Schwerpunkt sind freiwillig), wir schreiben dir
-        persönlich. Bis dahin passiert nichts. Warteliste: kostenlos und unverbindlich, du bekommst nur eine Nachricht,
-        wenn der Pilot startet und wenn Autopilot verfügbar ist.
+        Pilotgespräch: Du schreibst uns eine E-Mail (Betrieb und Gewerk reichen), wir antworten dir persönlich. Bis
+        dahin passiert nichts.
       </p>
       <p className="note">Pilotphase · kein Vertragsangebot</p>
     </Section>

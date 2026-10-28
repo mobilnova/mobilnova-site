@@ -40,8 +40,8 @@ export default function Branchen() {
         ))}
       </dl>
       <p className="note">
-        Stand heute läuft der Pilot mit Betrieben aus der Fahrzeugpflege. Weitere Gewerke kommen nacheinander dazu. Ist
-        dein Gewerk nicht dabei, schreib uns: Oft ist der Ablauf derselbe.{" "}
+        Stand heute läuft der Pilot mit Betrieben aus der Fahrzeugpflege. Pilotplätze gibt es vorerst nur für Aufbereiter und
+        Folierer. Weitere Gewerke kommen nacheinander dazu. Ist dein Gewerk nicht dabei, schreib uns: Oft ist der Ablauf derselbe.{" "}
         <a href="/branchen/">Mehr zu den Gewerken</a>
       </p>
     </Section>

@@ -1,14 +1,11 @@
-import { PILOTGESPRAECH, WARTELISTE } from "@/lib/links";
+import { PILOTGESPRAECH } from "@/lib/links";
 
-// Ein Hauptbutton (Neon), die zweite Aktion als Outline. `stelle` landet als utm_medium.
-export default function Cta({ stelle }: { stelle: string }) {
+// Ein Hauptbutton (Neon): Pilotgespräch per E-Mail anfragen.
+export default function Cta() {
   return (
     <div className="acts">
-      <a className="btn" href={PILOTGESPRAECH(stelle)}>
+      <a className="btn" href={PILOTGESPRAECH}>
         Pilotgespräch anfragen
-      </a>
-      <a className="btn btn-o" href={WARTELISTE(stelle)}>
-        Auf die Warteliste
       </a>
     </div>
   );

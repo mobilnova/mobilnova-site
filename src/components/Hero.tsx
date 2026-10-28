@@ -21,9 +21,10 @@ export default function Hero() {
               „Autopilot“ heißt hier: Der Assistent erledigt die Vorarbeit, du entscheidest. Nichts geht ohne deine
               Freigabe raus, außer du schaltest die Automatik selbst ein.
             </p>
-            <Cta stelle="hero" />
+            <Cta />
             <p className="status mono faint">
-              Pilotphase · fünf Pilotplätze · 99 € für 2 Monate, zzgl. USt. · kein Vertragsangebot
+              Pilotphase · fünf Pilotplätze für Aufbereiter und Folierer · 99 € für 2 Monate, zzgl. USt. · kein
+              Vertragsangebot
             </p>
           </div>
 

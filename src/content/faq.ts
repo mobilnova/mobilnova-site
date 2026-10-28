@@ -10,7 +10,7 @@ export const FAQ: [string, string][] = [
   ],
   [
     "Was passiert, wenn ich auf „Pilotgespräch anfragen“ klicke?",
-    "Du kommst auf ein kurzes Formular. Pflicht ist nur deine E-Mail-Adresse, Betrieb und Schwerpunkt sind freiwillig. Danach schreiben wir dir persönlich, um einen Termin zu finden. Bis dahin passiert nichts, und die Anfrage verpflichtet dich zu nichts, auch nicht zum Pilotpreis. Die Warteliste ist die leichtere Variante: kostenlos und unverbindlich, du bekommst nur eine Nachricht, wenn der Pilot startet und wenn Autopilot verfügbar ist.",
+    "Dein E-Mail-Programm öffnet sich mit einer vorbereiteten Nachricht an info@mobilnova.de. Schreib Betrieb und Gewerk dazu und schick sie ab. Wir antworten dir persönlich, um einen Termin zu finden. Bis dahin passiert nichts, und die Anfrage verpflichtet dich zu nichts, auch nicht zum Pilotpreis. Pilotplätze gibt es vorerst nur für Aufbereitungs- und Folierungsbetriebe.",
   ],
   [
     "Ich nutze schon eine Software. Muss ich wechseln?",
@@ -22,7 +22,7 @@ export const FAQ: [string, string][] = [
   ],
   [
     "Was kostet es?",
-    "Der Pilot dauert zwei Monate und kostet einmalig 99 €. Danach ist ein Preis von 149 € pro Monat geplant; das ist ein geplanter Preis und noch kein Angebot. Alle Preise verstehen sich zuzüglich gesetzlicher Umsatzsteuer. Weitere Bedingungen besprechen wir im Pilotgespräch, bevor du irgendetwas zusagst. Es gibt fünf Pilotplätze, und diese Seite ist eine Information, kein Vertragsangebot.",
+    "Der Pilot dauert zwei Monate und kostet einmalig 99 €. Danach ist ein Preis von 149 € pro Monat geplant; das ist ein geplanter Preis und noch kein Angebot. Alle Preise verstehen sich zuzüglich gesetzlicher Umsatzsteuer. Weitere Bedingungen besprechen wir im Pilotgespräch, bevor du irgendetwas zusagst. Es gibt fünf Pilotplätze für Aufbereiter und Folierer, und diese Seite ist eine Information, kein Vertragsangebot.",
   ],
   [
     "Brauche ich technisches Wissen oder eigene Hardware?",
@@ -38,7 +38,7 @@ export const FAQ: [string, string][] = [
   ],
   [
     "Für welche Betriebe ist mobilnova?",
-    "Für Dienstleistungsbetriebe, bei denen der Ablauf gleich ist: Anfrage, Angebot, Termin, Arbeit beim Kunden, Rechnung. Im Pilot sind das heute Betriebe aus Fahrzeugaufbereitung und Folierung (mit PPF und Lackschutz), weil wir dort selbst arbeiten. Fensterreinigung und Gebäudereinigung sind in Vorbereitung, aber noch nicht im Pilot. Ist dein Gewerk nicht dabei oder läuft dein Betrieb anders, sprich mit uns: Im Pilotgespräch klären wir offen, was heute geht und was nicht.",
+    "Für Dienstleistungsbetriebe, bei denen der Ablauf gleich ist: Anfrage, Angebot, Termin, Arbeit beim Kunden, Rechnung. Im Pilot sind das heute Betriebe aus Fahrzeugaufbereitung und Folierung (mit PPF und Lackschutz), weil wir dort selbst arbeiten. Fensterreinigung und Gebäudereinigung sind in Vorbereitung, aber noch nicht im Pilot; Pilotplätze gibt es vorerst nur für Aufbereiter und Folierer. Ist dein Gewerk nicht dabei oder läuft dein Betrieb anders, sprich mit uns: Im Pilotgespräch klären wir offen, was heute geht und was nicht.",
   ],
   [
     "Was ist ein Branchenpaket?",

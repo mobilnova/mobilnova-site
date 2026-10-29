@@ -13,9 +13,9 @@ export default function Hero() {
         <div className="hero-grid">
           <div>
             <p className="lead">
-              mobilnova Autopilot ist der digitale Assistent für deinen Servicebetrieb. Er beantwortet Anfragen,
-              bereitet Angebote vor, schlägt Termine vor und schreibt Rechnungen. Dein Team arbeitet beim Kunden.
-              Du siehst, was der Assistent vorschlägt, und gibst frei.
+              Weniger Büro, mehr Arbeit beim Kunden. mobilnova Autopilot ist der digitale Assistent für deinen
+              Servicebetrieb: Er beantwortet Anfragen, bereitet Angebote vor, schlägt Termine vor und schreibt
+              Rechnungen. Du siehst, was er vorschlägt, und gibst frei.
             </p>
             <p className="note" style={{ marginTop: "1rem" }}>
               „Autopilot“ heißt hier: Der Assistent erledigt die Vorarbeit, du entscheidest. Nichts geht ohne deine

@@ -7,7 +7,7 @@ export default function Header() {
       <div className="wrap head-in">
         <Logo />
         <nav className="nav mono" aria-label="Abschnitte">
-          <a href="/#warum">Warum Autopilot</a>
+          <a href="/#warum">Warum mobilnova</a>
           <a href="/#branchen">Gewerke</a>
           <a href="/#arbeit">So arbeitet es</a>
           <a href="/#grundsaetze">Grundsätze</a>
